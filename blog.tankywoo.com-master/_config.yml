@@ -1,0 +1,6 @@
+name: "sImo site"
+description: "Simo's site, i'm on the road, domain is i.onrd.net"
+url: "http://i.onrd.net"
+markdown: redcarpet
+highlighter: pygments
+exclude: []
