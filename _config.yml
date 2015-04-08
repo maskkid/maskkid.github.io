@@ -1,6 +1,26 @@
-name: "sImo site"
-description: "Simo's site, i'm on the road, domain is i.onrd.net"
-url: "http://i.onrd.net"
-markdown: redcarpet
-highlighter: pygments
-exclude: []
+# Dependencies
+markdown:            redcarpet
+highlighter:         pygments
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               sImo
+tagline:             'Ownn site'
+description:         "Simo's site, i'm on the road, domain is i.onrd.net"
+url:                 http://i.onrd.net
+baseurl:             /
+paginate:            5
+
+# About/contact
+author:
+  name:              sImo
+  url:               https://i.onrd.net
+  email:             im@onrd.net
+
+# Custom vars
+version:             1.0.0
