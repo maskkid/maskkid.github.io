@@ -1,14 +1,23 @@
 ---
 layout: post
-title: About
-date: 2013-09-10 21:48
+title: "关于sImo"
+date: 2015-04-08 14:50
 ---
 
+####关于
+* 出身贫农
+* 毕业多年
+* 转行数次
+* 混迹网络
+* 行骗多年
+* 无名无望
+* 真身究竟
+* 2B码农！
 
-这是我的个人博客, 记录技术、生活等方面的点点滴滴。
-
-关于技术上的，这些技术片段我会逐步汇总到我的 [wiki](http://wiki.wutianqi.com) 上。
-
-欢迎业内朋友多多交流。
-
-更多可以转到 [http://tankywoo.com](http://tankywoo.com)
+####爱好
+* coding
+* reading
+* playing
+* gitaing
+* loving
+* sleeping
