@@ -10,11 +10,15 @@ relative_permalinks: true
 
 # Setup
 title:               sImo
-tagline:             'Ownn site'
-description:         "Simo's site, i'm on the road, domain is i.onrd.net"
+tagline:             '- Clean&Log'
+description:         "This is my clean env, most about my work n study."
 url:                 http://i.onrd.net
 baseurl:             /
 paginate:            5
+
+#git setting
+github:
+  repo: 			https://github.com/maskkid
 
 # About/contact
 author:
