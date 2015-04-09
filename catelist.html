@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Home
+title: "分类"
+header: Posts By Category
+group: navigation
 ---
 
 <div class="posts">
@@ -10,9 +12,9 @@ title: Home
       <a href="{{ post.url }}">
         {{ post.title }}
       </a>
-      <span class="post-date">[{{ post.category }}]  {{ post.date | date_to_string }} </span>
     </h1>
-<!--     {{ post.excerpt }} -->
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+    {{ post.excerpt }}
   </div>
   {% endfor %}
 </div>

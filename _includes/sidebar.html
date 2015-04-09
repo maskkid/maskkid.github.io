@@ -24,6 +24,16 @@
     <a class="sidebar-nav-item" href="{{ site.github.repo }}">Github</a>
   </nav>
 
+  <div class="sidebar-cate">
+    <p>分类</p>
+    <ul>
+    {% assign cates = site.categories %}
+    {% for cate in cates %}
+      <li><em style="display:inline-block; width:4em">{{ cate|first}}</em>[{{cate|last|size}}]</li>
+    {% endfor %}
+    </ul>
+  </div>
+
   <div class="sidebar-item">
     <p>{{ site.description }}</p>
   </div>

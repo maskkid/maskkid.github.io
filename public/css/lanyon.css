@@ -84,8 +84,8 @@ h1, h2, h3, h4, h5, h6 {
   .container {
     max-width: 38rem;
   }
-}
-*/
+}*/
+
 
 /*
  * Masthead
@@ -324,17 +324,19 @@ a.sidebar-nav-item:focus {
 
 /* Meta data line below post title */
 .post-date {
-  display: block;
-  margin-top: -.5rem;
+  float : right;
+  display: inline-block;
+  margin-top : 1rem;
   margin-bottom: .3rem;
   color: #9a9a9a;
+  font-size: .6rem;
 }
 
 /* Related posts */
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: 1px solid #eee;
+  border-top: 0px solid #eee;
 }
 .related-posts {
   padding-left: 0;

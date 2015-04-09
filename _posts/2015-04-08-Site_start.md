@@ -2,6 +2,7 @@
 layout: post
 title: "开篇"
 date: 2015-04-08 14:38
+category : other
 ---
 ####为什么
 * 省心，省力。

@@ -5,12 +5,13 @@ highlighter:         pygments
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
+# permalink:           pretty
+permalink: 			 /:year/:month/:day/:title
 relative_permalinks: true
 
 # Setup
-title:               sImo
-tagline:             '- Clean&Log'
+title:               'On the Road, Walk hard!'
+tagline:             ''
 description:         "This is my clean env, most about my work n study."
 url:                 http://i.onrd.net
 baseurl:             /
@@ -22,7 +23,7 @@ github:
 
 # About/contact
 author:
-  name:              sImo
+  name:              SIMO
   url:               https://i.onrd.net
   email:             im@onrd.net
 
