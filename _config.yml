@@ -13,7 +13,7 @@ relative_permalinks: true
 title:               'On the Road, Walk hard!'
 tagline:             ''
 description:         "This is my clean env, most about my work n study."
-url:                 http://i.onrd.net
+url:                 http://im.onrd.net
 baseurl:             /
 paginate:            5
 
@@ -24,7 +24,7 @@ github:
 # About/contact
 author:
   name:              SIMO
-  url:               https://i.onrd.net
+  url:               https://im.onrd.net
   email:             im@onrd.net
 
 # Custom vars

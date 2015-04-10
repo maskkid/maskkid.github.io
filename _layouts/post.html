@@ -8,6 +8,19 @@ layout: default
   {{ content }}
 </div>
 
+<div class="pagination">
+  {% if page.previous %}
+    <a class="pagination-item newer" href="{{page.previous.url}}">{{page.previous.title}} - [{{page.previous.date}}]</a>
+  {% else %}
+    <span class="pagination-item newer">{{site.data.lang.cn.str_empty}}</span>
+  {% endif %}
+  {% if page.next %}
+    <a class="pagination-item older" href="{{page.next.url}}">{{page.next.title}} - [{{page.next.date}}]</a>
+  {% else %}
+    <span class="pagination-item older">{{site.data.lang.cn.str_empty}}</span>
+  {% endif %}
+</div>
+
 <div class="related">
   <h3>其他文章：</h3>
   <ul class="related-posts">

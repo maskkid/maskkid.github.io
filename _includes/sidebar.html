@@ -5,7 +5,7 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">首页(Home)</a>
+    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">首页</a>
 
     {% comment %}
       The code below dynamically generates a sidebar nav of pages with
@@ -26,20 +26,21 @@
 
   <div class="sidebar-item">
     <ul>
+    <li><em style="display:inline-block; width:4em; font-style:normal">Total :</em> ({{site.posts|size}})</li>
     {% assign cates = site.categories %}
     {% for cate in cates %}
-      <li><em style="display:inline-block; width:4em">{{ cate|first}}</em>[{{cate|last|size}}]</li>
+      <li>└ <em style="display:inline-block; width:4em; font-style:normal">{{ cate|first}}</em>({{cate|last|size}})</li>
     {% endfor %}
     </ul>
   </div>
 
   <div class="sidebar-item">
-    <p>{{ site.description }}</p>
+    
   </div>
 
   <div class="sidebar-item">
-    <p>
-      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
-    </p>
+    <p>{{ site.description }}</p>
+    <p>{{site.time|date_to_string}}</p>
+    <p> &copy; {{ site.time | date: '%Y' }}. All rights reserved. </p>
   </div>
 </div>

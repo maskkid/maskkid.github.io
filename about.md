@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "关于SIMO"
+title: "关于"
 ---
 
 ###我是谁
