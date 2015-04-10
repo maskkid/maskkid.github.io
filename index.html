@@ -25,12 +25,12 @@ title: Home
   {% endif %}
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">{{ site.data.lang.cn.post_next }}</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}">{{ site.data.lang.cn.page_next }}</a>
     {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">{{ site.data.lang.cn.post_next }}</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">{{ site.data.lang.cn.page_next }}</a>
     {% endif %}
   {% else %}
-    <span class="pagination-item newer">{{ site.data.lang.cn.post_next }}</span>
+    <span class="pagination-item newer">{{ site.data.lang.cn.page_next }}</span>
   {% endif %}
 </div>
 
