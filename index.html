@@ -8,9 +8,9 @@ title: Home
   <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url }}">
-        {{ post.title }}
+        <em style="float:left; width:4em">[{{ post.category }}]</em> {{ post.title }}
       </a>
-      <span class="post-date">[{{ post.category }}]  {{ post.date | date_to_string }} </span>
+      <span class="post-date">  {{ post.date | date_to_string }} </span>
     </h1>
 <!--     {{ post.excerpt }} -->
   </div>
