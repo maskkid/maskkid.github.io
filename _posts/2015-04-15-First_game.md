@@ -3,7 +3,7 @@ layout: post
 title: "一个基于canvas的小游戏"
 date: 2015-04-15 21:53
 category : tech
-tag : tech game html5 css3
+tag : game
 ---
 
 朋友公司的一个小游戏，几年前自己做过一套基于坐标的事件框架，等准备碰撞检测的时候，分神去学算法了，后来就是玩cocos2d-js，然后经过这几年，跟很多技术一样，又荒废了，只剩下一个解决问题的方向。

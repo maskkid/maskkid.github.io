@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "好久了，遇到又一部电影《爆裂鼓手》"
+title: "好久了，遇到又一部好电影《爆裂鼓手》"
 date: 2015-04-15 12:22
 category : other
 ---

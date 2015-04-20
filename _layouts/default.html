@@ -16,6 +16,13 @@
             <a href="/" title="Home">{{ site.title }}</a>
             <small>{{ site.tagline }}</small>
           </h3>
+
+          <div class="doing">
+            {% assign things = site.data.doing.things %}
+            {% for _t in things %}
+              {{ _t }}；
+            {% endfor %}
+          </div>
         </div>
       </div>
 
