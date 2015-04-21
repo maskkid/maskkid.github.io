@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cocos2d-js总结笔记"
+title: "Cocos2d-js总结笔记-1[基础概念备忘]"
 date: 2015-04-20 21:38
 category : game
 ---
