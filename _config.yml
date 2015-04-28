@@ -21,6 +21,10 @@ paginate:            10
 github:
   repo: 			https://github.com/maskkid
 
+#other links
+links:
+  blog: 			http://blog.onrd.net
+
 # About/contact
 author:
   name:              SIMO
