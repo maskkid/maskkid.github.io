@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cocos2d-js总结笔记-3[进阶学习要点]"
-date: 2015-04-29 23:38
+date: 2015-04-28 23:38
 category : game
 ---
 
