@@ -15,7 +15,7 @@ tagline:             ''
 description:         "This is my clean env, most about my work n study."
 url:                 http://im.onrd.net
 baseurl:             /
-paginate:            10
+paginate:            20
 
 #git setting
 github:
