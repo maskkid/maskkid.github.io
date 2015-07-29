@@ -21,7 +21,7 @@
       {% endif %}
     {% endfor %}
     
-    <a class="sidebar-nav-item" href="{{ site.links.blog }}">Old Blog</a>
+    <a class="sidebar-nav-item" href="{{ site.links.blog }}">老博客</a>
     <a class="sidebar-nav-item" href="{{ site.github.repo }}">github</a>
     
   </nav>
@@ -31,7 +31,7 @@
     <li><em style="display:inline-block; width:4em; font-style:normal">Total :</em> ({{site.posts|size}})</li>
     {% assign cates = site.categories %}
     {% for cate in cates %}
-      <li>└ <em style="display:inline-block; width:4em; font-style:normal">{{ cate|first}}</em>({{cate|last|size}})</li>
+      <li>├ <em style="display:inline-block; width:4em; font-style:normal">{{ cate|first}}</em>({{cate|last|size}})</li>
     {% endfor %}
     </ul>
   </div>

@@ -10,9 +10,9 @@ permalink: 			 /:year/:month/:day/:title
 relative_permalinks: true
 
 # Setup
-title:               'On the Road, Walk hard!'
+title:               'On the Road, Walk hard! 在路上，永不止步！'
 tagline:             ''
-description:         "This is my clean env, most about my work n study."
+description:         "这是一个纯静态的文章留存地址，主要记录技术文章。."
 url:                 http://im.onrd.net
 baseurl:             /
 paginate:            20
