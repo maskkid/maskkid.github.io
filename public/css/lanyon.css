@@ -313,7 +313,7 @@ a.sidebar-nav-item:focus {
 .page,
 .post {
   margin-bottom: 1em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px dotted #eee;
 }
 
 /* Blog post or page title */
