@@ -1,3 +1,10 @@
+---
+layout: post
+title: "微信api微框架设计"
+date: 2015-08-11 14:52
+category : tech
+---
+
 <pre>
 WeixinApi.class 实现所有原生api
 	api_method1
