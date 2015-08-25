@@ -33,18 +33,18 @@ title: Home
     <span class="pagination-item newer">{{ site.data.lang.cn.page_next }}</span>
   {% endif %}
 </div>
-<script src="public/js/jquery.js"></script>
+<script src="public/jquery.js"></script>
 <script>
 ;(function($){
-var _c={length:0},_pre = 'cate_style';
+var _c={length:0},_pre = 'cate_style_';
 $('.posts .post-title').each(function(){
 	var $em = $(this).find('em').eq(0),
 	emv = $em.text();
 	if(!_c[emv]) {
-		_c[emv] = _pre+'_'+_c.length;
+		_c[emv] = _pre+_c.length;
 		_c.length++;
 	}
-	$em.addClass(_pre + ' ' + _c[emv]);
+	$em.addClass(_c[emv]);
 })
 }(jQuery));
 </script>

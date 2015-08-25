@@ -328,9 +328,9 @@ a.sidebar-nav-item:focus {
 }
 .post-title em {
   float:left;
-  margin:3px 10px 0 0;
-  font-size:14px;
-  background:#aaa;
+  margin:5px 10px 0 0;
+  font-size:12px;
+  background:#666;
   color:#fff;
   padding:1px 2px;
   border-radius:5px;

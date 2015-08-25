@@ -423,3 +423,52 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+.post-title .cate_style_0 {
+background:#479AC7;
+color:#fff;
+}
+.post-title .cate_style_5 {
+background:#B45B3E;
+color:#fff;
+}
+.post-title .cate_style_2 {
+background:#00B271;
+color:#fff;
+}
+.post-title .cate_style_3 {
+background:rgb(161,23,21);;
+color:#fff;
+}
+.post-title .cate_style_4 {
+background:rgb(248,147,29);
+color:#fff;
+}
+.post-title .cate_style_1 {
+background:rgb(254,67,101);
+color:#fff;
+}
+.post-title .cate_style_6{
+background:rgb(17,63,61);;
+color:#fff;
+}
+.post-title .cate_style_7 {
+background:rgb(56,13,49);
+color:#fff;
+}
+.post-title .cate_style {
+  transition-property: background,color;
+  transition-duration: 2s,1s;
+  transition-timing-function: linear;
+  /* Firefox 4 */
+  -moz-transition-property:background,color;
+  -moz-transition-duration:2s,1s;
+  -moz-transition-timing-function:linear;
+  /* Safari 和 Chrome */
+  -webkit-transition-property:background,color;
+  -webkit-transition-duration:2s,1s;
+  -webkit-transition-timing-function:linear;
+  /* Opera */
+  -o-transition-property:background,color;
+  -o-transition-duration:2s,1s;
+  -o-transition-timing-function:linear;
+}
