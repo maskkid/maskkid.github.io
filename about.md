@@ -54,18 +54,21 @@ title: "《我是谁》"
 1. <del>2D游戏开发- cocos2D引擎<del>
 2. <del>3D游戏开发- unity3D + blender + three.js<del>
 3. 后端架构设计 2015.7.28
- * 开源框架源码分析：ThinkPHP源码分析/CI/Yii
- * 框架设计模式
+ * <del>开源框架源码分析：ThinkPHP源码分析/CI/Yii</del>
+ * <del>框架设计模式</del>
+ * c#
 
-4. 前端前沿扩展 2015.7.30
- - Typescript/Coffeescript
- - Webpack/glup
+4. 前端前沿扩展 <del>2015.7.30</del>
+ - <del>Typescript/Coffeescript</del>
+ - <del>Webpack/glup</del>
+ - <del>browserify 2015.8.25</del>
+ - <del>react/flux 2015.8.25</del>
 
 ***
 
 ###其他
 * <del>基于PI的小物联网入门</del>
 * <del>Linux入门</del>
-* 白鹭引擎 2015.8.1
-* 健身计划 2015.8.1
+* <del>白鹭引擎 2015.8.1</del>
+* 健身计划 2015.8.25
 

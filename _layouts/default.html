@@ -51,6 +51,21 @@
       })(document);
     </script>
 
+<script src="/public/js/jquery.js"></script>
+<script>
+;(function($){
+var _c={length:0},_pre = 'cate_style';
+$('.posts .post-title').each(function(){
+  var $em = $(this).find('em').eq(0),
+  emv = $em.text();
+  if(!_c[emv]) {
+    _c[emv] = _pre+'_'+_c.length;
+    _c.length++;
+  }
+  $em.addClass(_pre + ' ' + _c[emv]);
+})
+}(jQuery));
+</script>
 <span style="display:none"><script>
 var _hmt = _hmt || [];
 (function(){var hm = document.createElement("script"); hm.src = "//hm.baidu.com/hm.js?b357fbdb973b482aa5e62f39cd5952f9";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script></span>
