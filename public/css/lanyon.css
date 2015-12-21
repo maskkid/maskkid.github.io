@@ -107,6 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
+  margin-left:2rem;
   color: #505050;
 }
 .masthead-title a {
@@ -346,10 +347,11 @@ a.sidebar-nav-item:focus {
 .post-date {
   float : right;
   display: inline-block;
-  margin-top : 1rem;
+  margin-top : .5rem;
   margin-bottom: .3rem;
-  color: #9a9a9a;
+  color: #ddd;
   font-size: .6rem;
+  padding:0 3px;
 }
 
 /* Related posts */

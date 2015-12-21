@@ -10,7 +10,7 @@ title: Home
       <a href="{{ post.url }}">
         <em>{{ post.category }}</em> {{ post.title }}
       </a>
-      <span class="post-date">{{ post.date}}</span>
+      <span class="post-date">{{ post.date| date:"%Y.%m.%d"}}</span>
     </h1>
 <!--     {{ post.excerpt }} -->
   </div>
