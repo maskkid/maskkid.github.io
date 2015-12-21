@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="box">
+    <!-- 直接显示对象数据 -->
+    <div sb-data="data.data" class="inner">
+      {{$currentTime}}  -- {{$rank}} -- {{$count}}
+    </div>
+    <div class="inner">
+      <ul>
+        <!-- 指令赋值 -->
+        <li sb-data="data.data.rank|cutstr:0">111111111111</li>
+        <li sb-data="data.data.count|imgGet|cutstr:1">111111111111</li>
+      </ul>
+    </div>
+    <div class="inner">
+      <ul>
+      <!-- repeat 遍历指令 -->
+        <li sb-data="data.data.details.$$0.stocks|limit:0,6" sb-repeat>{{$se_name|cutstr:1}}</li>
+      </ul>
+    </div>
+    <div class="inner">
+      <ul>
+      <!-- 遍历后管道过滤 -->
+        <li sb-data="data.data.details.$$1.stocks" sb-repeat>{{$index}} {{$symbol}} {{$se_name|cutstr:5}}</li>
+      </ul>
+    </div>
+    <div class="inner">
+      <h3>数组获取支持 </h3>
+      <ul>
+        <!-- 数组获取支持 -->
+        <li sb-data="data.data.details" sb-repeat><img src="{{stocks.$$0.symbol}}" />{{$stocks.$$0.symbol}}</li>
+      </ul>
+    </div>
+
+    <div style="background:#666; color:#fff; padding:2rem">
+      <ul>
+        <!-- 内嵌脚本支持 加减法，你任意发挥！甚至使用匿名返回函数 -->
+        <li sb-data="test.data.$$0" sb-repeat x={{$index}}>{{$index}} - {{$key}} - {{$value}} - {{$index+100}}</li>
+      </ul>
+      <ul>
+        <!-- 多层管道支持 -->
+        <li sb-data="test.data|limit:0,3|limit2" sb-repeat>index-{{$index+$index}} - id:{{$id}}*3={{$id*3}} - {{$name}}</li>
+      </ul>
+    </div>
+  </div>
+
+    <div>
+        <ul>
+            <li sb-data="ajax.devDependencies" sb-repeat>{{$key}} - {{$value}}</li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+// 利用对象扩展之后，jQuery发出ajax请求的header就会使用这个namespace的函数体。
+// 很奇怪，应该是在jQuery的ajax请求的时候，获取了对象上不属于jQuery自定义的对象
+
+//Object.prototype.namespace = function(s, v) {
+//    var k;
+//    s = s || '';
+//    v = v || '';
+//    if (!s) return;
+//    if(!s.split) {console.log(this);return}
+//    s = s.split('.');
+//    k = s[0];
+//    if(k.indexOf('$$')===0) {k = k.substr(2)*1;} // 支持数组
+//    if (!this[k]) {
+//        this[k] = {};
+//    }
+//    if (s.length>1) {
+//        s.splice(0, 1);
+//        return this[k].namespace(s.join('.'), v);
+//    } else {
+//        if(v) {this[k] = v; return v}
+//        this[k] = this[k]?this[k]:{};
+//        v = this[k];
+//        return v;
+//    }
+//};
+
+function namespace(s, v, o) {
+    o = o || window;
+    var k;
+    s = s || '';
+    if (!s) return;
+    s = s.split('.');
+    k = s[0];
+    if(k.indexOf('$$')===0) {k = k.substr(2)*1;} // 支持数组
+    if (!o[k]) {
+        o[k] = {};
+    }
+    if (s.length>1) {
+        s.splice(0, 1);
+        return namespace(s.join('.'), v, o[k]);
+    } else {
+        if(v!==undefined) {o[k] = v; return v}
+        o[k] = o[k]?o[k]:{};
+        v = o[k];
+        return o[k];
+    }
+};
+
+
+// sb-repeat="i in x"
+// 待做：
+// 1 limit过滤器对对象的支持 简单
+// 2 {{}}内容的eval支持 搞定
+// 3 脏值检测对repeat的支持
+// 4 缓存模板<=>dom的关系，再次渲染的时候，不重复遍历
+function SingleBinder(data, pre) {
+  data = data || {};
+  pre = pre || 'data';
+  var attr_pre = 'sb', // single binder
+      regReplacer = /\{\{([^\{\}]+)\}\}/ig;
+      filterAttrs = {
+          'SCRIPT' : true
+      },
+      vattrs={
+        IMG : 'src',
+        INPUT : 'value',
+        OTHERS : 'innerHTML'
+      },
+      pipe_cmd = { // 管道命令
+        limit : function(d, start, limit){
+          return d.slice(start, start+limit);
+        },
+        cutstr : function(d, l, ext) {
+          ext = ext || '...';
+          return d.length>l?d.toString().substr(0,l*1) + ext:d;
+        },
+        script : function(d) {
+          eval('var r = ' + d); // 支持表达式 + 匿名函数
+          console.log(d);
+          return r;
+        }
+      };
+
+  if(!SingleBinder.cache || !SingleBinder.cache.doms.length) {
+    namespace('cache.doms',  document.getElementsByTagName('*'), SingleBinder);
+  }
+  if(!SingleBinder.cache[pre]) {
+    namespace('cache.'+pre+'.doms', [], SingleBinder);
+  }
+  var doms = SingleBinder.cache.doms,
+      i=0,
+      ol = doms.length,
+      l=ol;
+
+//  console.log(namespace('cache.doms', undefined, SingleBinder));
+  function varReset(){l=ol;i=0}
+
+  // 数据前缀、数据、管道解析
+  function attrparser(s, haspre) {
+    haspre = haspre!=='nopre'?true:false; // repeat的时候，不许要前缀过滤
+    if(!s) return false;
+    s = s.split('|');
+    var sd = s[0];
+    s.shift();
+    // console.log(s);
+    sd = sd.split('.');
+    if(haspre && sd.length<2) return false;
+    return {
+      'pre' : haspre?sd.shift():'',
+      'key' : sd.join('.'),
+      'pipe' : s[0]?s:null
+    };
+  }
+
+  // filter all doms 节点筛选
+  function domfilter(up) {
+    up = up || false;
+    if(!up && SingleBinder.cache[pre]['doms'].length) {return}
+    for(;i<l;i++) {
+      !function(i){
+        if(filterAttrs[doms[i].nodeName]) {return}
+        if(doms[i].getAttribute(attr_pre+'-data') && doms[i].getAttribute(attr_pre+'-data').indexOf(pre)===0) {
+          var attrparse = attrparser(doms[i].getAttribute(attr_pre+'-data'));
+//            console.log(doms[i].getAttribute(attr_pre+'-data'), pre)
+//           console.log(attrparse, doms[i])
+          if(!attrparse) {return}
+          doms[i]._datakey = attrparse['key'];
+          doms[i]._repeat = doms[i].getAttribute(attr_pre+'-repeat');
+          doms[i]._pipe = attrparse['pipe']; // 存储管道命令
+          SingleBinder.cache[pre]['doms'].unshift(doms[i]); // 反向插入
+        }
+      }(i);
+    }
+    varReset();
+  }
+
+  // 数据绑定
+  function databind() {
+    var doms = SingleBinder.cache[pre]['doms'],
+    l =   doms.length;
+    while(l--) {
+      // console.log('databind', doms[l]._datakey, data.namespace(doms[l]._datakey));
+      if(doms[l] && doms[l]._repeat===null) {
+          commonRender(doms[l]);
+      } else {
+        // doms[l].parentNode.innerHTML = repeatparser(doms[l], temv);
+        repeatRender(doms[l]);
+      }
+    }
+    varReset();
+  }
+
+  // 管道命令解析
+  function pipeparser(d,s) {
+    if(!d || !s) return d;
+    if(s.constructor==Array) { // 支持多管道
+      var nd = d,l=s.length,i=0;
+      for(;i<l; i++) {
+        nd = pipeparser(nd, s[i]);
+      }
+      return nd;
+    }
+    var args = s.split(':'),
+          cmd = args[0];
+    if(args[1]) {
+      args = args[1]?args[1].split(','):[];
+    }
+    args.unshift(d);
+    if(pipe_cmd[cmd]) {
+      return pipe_cmd[cmd].apply(null, args);
+    } else {
+      return d;
+    }
+  }
+
+  // ========================================================
+  // 这里可以继续解耦设计，将处理属性命令方法封装，commandParser
+  // 提供属性->处理方法的存储字面量。
+  // 参数为dom+处理数据，直接往dom里写入内容
+
+
+  // 处理普通值
+  function commonRender(o) {
+    var d = namespace(o._datakey, undefined, data),
+        nd = d.constructor===Object && o.innerHTML?strparser(d, o.innerHTML):pipeparser(d,o._pipe);
+        console.log('commonRender -> ', d.constructor, nd)
+   if (!isdirty(o, d)){return} // 脏值检测
+    if(vattrs[o.nodeName]) {
+      o[vattrs[o.nodeName]] = nd;
+    } else {
+      o[vattrs['OTHERS']] = nd;
+    }
+    o._ov = nd;
+  }
+
+  // 处理repeat
+  function repeatRender(o) {
+    // console.log('oo???', o, d);
+    var d = namespace(o._datakey, undefined, data),
+        dtype = d.constructor===Object?'object':'arraylike',
+        nd = pipeparser(d, o._pipe),
+        par = o.parentNode,
+        tplh = par.innerHTML,
+        h = '',
+        l = 0,
+        i = 0;
+
+    if(dtype=='arraylike') {
+        l = nd.length;
+        if(!l) return '';
+        for(;i<l;i++) {
+          !function(i) {
+            h += strparser(nd[i], tplh, i);
+          }(i);
+        }
+    } else {
+        for(l in nd) {
+            if(nd.hasOwnProperty(l)) {
+                h += strparser(nd[l], tplh, i, l, nd[l]);
+                i ++;
+            }
+        }
+    }
+    // console.log(tplh);
+    par.innerHTML = h;
+  }
+
+  // {{}}解析
+  // 需要添加 {{$id + $name|script}}的支持
+  // 将$index 改为 $$，所有内置key全部以$开头，解析全部$变量，
+  // 左右解析出来的值，都经过script过滤器过滤后，再交给其他过滤器
+  function strparserOld(d, h, i, k, v) {
+    // if(d.constructor===String) {return d}
+    if(!d || !h) return false;
+    return h.replace(regReplacer,function($1, $2, pos, h){
+//      console.log($2, i, k, v)
+      var nd = attrparser($2, 'nopre'), // 不适用前缀
+          r = '';
+      console.log('strparser->', $2, nd);
+      if($2.indexOf('$index')>-1) {
+          r = nd.key.replace('$index', i+1)
+      } else if($2.indexOf('$key')>-1) {
+          r = nd.key.replace('$key', k)
+      } else if($2.indexOf('$value')>-1) {
+        r = nd.key.replace('$value', v)
+      } else {
+        r = namespace(nd.key, undefined, d);
+      }
+      return pipeparser(r, nd.pipe); // {{data}} 支持管道命令
+    })
+  }
+
+  // 新的strparser方法
+  function strparser(d, h, i, k, v) {
+    if(!d || !h) return false;
+    var n = 0;
+    return h.replace(regReplacer,function($1, $2, pos, h){
+      var nd = attrparser($2, 'nopre'), // 不适用前缀
+          r = '',
+          reg2$ = /\$\$/,
+          reg = /\$([^\$][\w\.]*)/ig,
+          regSingle = /\$([^\$][\w\.]*)/; // =======================
+      if($2.indexOf('$index')>-1) {
+          r = nd.key.replace(/\$index/g, i+1);
+          // console.log(nd.key, nd.key.replace(/\$index/, '').length)
+          if(nd.key.replace(/\$index/, '').length>1) {n=99}
+      } else if($2.indexOf('$key')>-1) {
+          r = nd.key.replace(/\$key/g, k);
+      } else if($2.indexOf('$value')>-1) {
+          r = nd.key.replace(/\$value/g, v)
+      } else {
+        if(reg2$.test(nd.key)) {// 粗糙的处理，排除掉$$的情况
+          console.log('---->', nd.key)
+          r = namespace(nd.key.substr(1), undefined, d);// 去掉第一个$
+        } else {
+          if(nd.key.replace(regSingle, '').length>1) { // 只要替换玩指令后，大于1就作为js执行
+            n = 999;
+          }
+          r = nd.key.replace(reg, function($1, $2){
+            // console.log(n ++, 'value=', namespace($2, undefined, d));
+            n ++;
+            return namespace($2, undefined, d);
+          });
+          // console.log(r, n)
+        }
+      }
+      // 只要匹配1个以上命令，就按照js来执行
+      console.log('strparser --> ', n, d, nd, $2);
+      if(n>1) {r = pipeparser(r, 'script');}
+      n = 0;
+      return pipeparser(r, nd.pipe); // {{data}} 支持管道命令
+    })
+  }
+
+  // check dirty value 脏值检测
+  function isdirty(o,v) {return (!o._ov) || (o && o._ov && o.ov!=v)}
+  function run(updateDom) {
+      updateDom = updateDom||false;
+      domfilter(updateDom); // 是否重新筛选节点
+      databind();
+  }
+  return {
+    pipeCmd : function(s, fn) {
+        pipe_cmd[s] = fn;
+        return this;
+    },
+    render : run
+  }
+}
+
+var data = {
+    "data": {
+        "currentTime": 1448358049799,
+        "rank": 92,
+        "count": 425,
+        "details": [
+            {
+                "id": 696,
+                "optime": 1448294400000,
+                "createdate": 1448278385000,
+                "position": 20,
+                "stocks": [
+                    {
+                        "se_name": "富奥股份",
+                        "symbol": "000030"
+                    },
+                    {
+                        "se_name": "远望谷",
+                        "symbol": "002161"
+                    },
+                    {
+                        "se_name": "利达光电",
+                        "symbol": "002189"
+                    },
+                    {
+                        "se_name": "天齐锂业",
+                        "symbol": "002466"
+                    },
+                    {
+                        "se_name": "浙江永强",
+                        "symbol": "002489"
+                    }
+                ]
+            },
+            {
+                "id": 592,
+                "optime": 1448208000000,
+                "createdate": 1448019366000,
+                "position": 20,
+                "stocks": [
+                    {
+                        "se_name": "海澜之家12345",
+                        "symbol": "600398"
+                    },
+                    {
+                        "se_name": "东方银星12",
+                        "symbol": "600753"
+                    },
+                    {
+                        "se_name": "锦江股份1",
+                        "symbol": "600754"
+                    },
+                    {
+                        "se_name": "工商银行",
+                        "symbol": "601398"
+                    },
+                    {
+                        "se_name": "海天味业123456",
+                        "symbol": "603288"
+                    }
+                ]
+            }
+        ],
+        "img": "http://219.img.celuechaogu.com/aIHrHKxySV_02.jpg",
+        "strategy": {
+            "creator": "阿悦啊",
+            "retaDrawdown": 6.23,
+            "retaReturnDrawdown": 2.04,
+            "createTime": 1447742519000,
+            "followNum": 1,
+            "uid": 3,
+            "retaReturn": 12.69,
+            "name": "试一试1",
+            "id": 91
+        }
+    }
+};
+
+var dtest = {
+  'data' : [
+    {id:1, name:'simo1a-b-c'},
+    {id:2, name:'simo2-b-c'},
+    {id:3, name:'simo3-b-c'},
+    {id:4, name:'simo4'},
+    {id:5, name:'simo5'},
+  ]
+}
+
+SingleBinder(data, 'data').pipeCmd('imgGet', function(d){
+    return '111';
+}).render();
+
+SingleBinder(dtest, 'test')
+  .pipeCmd('cmd1', function(d){
+    var v =d.split('-')
+    return v[0];
+  })
+  .pipeCmd('cmd2', function(d){
+    return '<span style="background:red">' + d + '</span>'
+  })
+  .pipeCmd('limit2', function(d){
+    // return [{id:999,name:'my_test_spilit-hahahha'}];
+    return d;
+  })
+  .render();
+</script>
+
+
+<script src="../lib-fe/jquery/jquery-1.11.3.min.js"></script>
+<script>
+    var settings = {
+        type: "GET",
+        url:'./package.json',
+        dataType:"json",
+        error: function(XHR,textStatus,errorThrown) {
+            console.log("XHR="+XHR+"\ntextStatus="+textStatus+"\nerrorThrown=" + errorThrown);
+        },
+        success: function(data,textStatus) {
+            console.log('back-data');
+            // SingleBinder(data, 'ajax').render();
+        },
+        headers: {
+            "Access-Control-Allow-Origin":"http://test.aa",
+            "Access-Control-Allow-Headers":"X-Requested-With"
+        }
+    };
+    $.ajax(settings);
+</script>
+</body>
+</html>
