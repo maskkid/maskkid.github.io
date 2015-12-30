@@ -3,103 +3,41 @@ layout: page
 title: "简历"
 ---
 
----
-
-# 1.个人信息
-
- - 王洪泊/男/1981/本科/河北医科大学 (2001 - 2006)
- - 工作年限：9+年
- - 联系电话：15O22666243
- - Email：im#onrd.net (@替换#)
- - 技术博客：[http://im.onrd.net](http://im.onrd.net)
- - 期望职位：Web前端高级程序员/PHP高级程序员
- - 期望薪资：月薪30k
- - 期望城市：北京
- - 个人简介：非常爱好编程技术，希望突破年龄界限一直能写下去；知识面较广；学习能力较强；有一些项目开发和管理经验；工作效率/工作态度/稳定性还行；沟通协作能力较强；具有解决棘手问题的思维和执行力。
-
----
-
-# 2.个人技术栈
-
-	自定义技术水平划分标准：
-		精通-A： 完全明白原理，掌握架构/程序设计/代码组织/运行效率等多方面知识，大脑基本上就是该语言的编译器或运行环境; 
-		熟悉-B： 能高效用于生产，并且知道大部分基础/实现原理等; 
-		了解-C： 有使用经验，能直接或借助网络，将技术用于开发; 
-		知道-D： 接触过，但不熟练，需要温习/学习。
-
-- 开发语言：PHP（B）/html+css+javascript（B）
-- 前端框架：Jquery（B）/ Zepto（B）/　Reactjs（D）/ AngularJS（C）/ Vue（C）/ Cocos2dJS（C）|Collie（C）/ jqueryMobile（C）/ ionic（C）/ Bootstrap（C）/ Backbone（C）/ Requirejs（C）等
-- 后端框架：ThinkPHP（C）/Lavaral（C）/SpeedPHP（B）/CI（C）/Yii(C)
-- 前端工具：Bower/ Grunt/ Gulp/ Webpack/ LeSS/ Emmet等
-- IDE/编辑器：Sublime/Webstorm/PHPstrom/eclipse/Vim
-- 数据库：MySQL(C)/MongoDB（C）
-- 版本管理工具：Svn(C)/Git(C)
-- 其他
-	- 编程语言（D）：C/CPP/C#,PYTHON,汇编,java,批处理,vbs等
-	- lnmp环境搭建/维护（C）
-	- 基于树莓派的玩具（C 摄像头/基于开源SRS的流媒体服务器搭建使用/ffmpeg.ffplay编译使用/语音识别/图像识别/温度湿度激光等传感器gpio通信等等）
-
-
----
-
-# 3.工作经历
- 
-## 3.1 天津网博互动科技有限公司 （2008.5 - 2015.12）
-
-公司成立１０几年，虽然员工不到５０人，但服务的用户和客户比较广泛，客户30万，包括德州仪器等国际公司；注册用户超过100万，访问量也比较高。
-
-### 3.1.1 概述
- * 2008年进入公司做网站编辑，偶然机会，公司老总用2周时间带我学习html+css入门，后来几年自学其他语言及技术。在该公司担任过网站编辑/网管/前端开发/后端开发/前端组长/技术主管/技术经理。
- * 2009年以后，网站JS插件基本全部由我来开发，部分使用至今。包括dialog／分层设计的轮播/美化select／键盘事件辅助插件/关键词搜索下拉自动匹配等等。
- * 2010年，开始做一些技术管理工作，最开始是前端管理，主要制定前端开发规范／前端开发流程／人工测试流程／codereview／整理前端框架和助手工具／提升团队技术水平／带新人，曾经用3个月时间培养出3名前端新人，均能独立完成网站整个频道的前端开发和大部分交互处理。
- * 整个在该公司期间，为了节约成本/提高效率，自发编写内部使用的辅助工具，调研并搭建一些内部服务系统。比如：本地dns服务器/完整的EDM系统/各种win批处理脚本/前端布局脚手架等。
- * 目前在公司主要担任开发工作，负责前后端开发工作。
-
-### 3.1.2 具体项目
-
- - [电源网](http://www.dianyuan.com)
-
-	这个网站是公司主营网站，目前主要负责前端（html/css/javascript)/后端开发(php)。
-
- - <del>电力网(http://www.dianli.com) （已下线）</del>
- - <del>精细化工网(http://jxhuagong.com)（已下线）</del>
- - <del>元器件网(http://www.yuanqijian.com)（已下线）</del>
-
-	2、3、4三个网站，规模与电源网类似，我主要负责制定检查前端规范/处理疑难问题/开发公用插件/部分后端开发任务，其中基本的切图和交互由我培养的几个团队成员来负责完成。
-
- * <del>排名网(http://www.paiming.com)（已下线）</del>
-
-	网站大概是2011年左右，从零开始开发，第一版经过3个月的开发周期，后期较大的迭代有3次，历时大概一年半。该项目前端交互设计比较复杂，包括：拖动排序一系列的更新接口对接/拖动创建新的排序表单/音乐自动获取并回显播放/多个视频网站url解析真实视频播放地址的扩展/google图片自动获取.下载.回显等等。
-	当时为了兼顾整个团队水平，我选择JQuery+自己扩展插件来实现。这个项目用到/学到很多前端比较前沿的交互处理技能。
-
-## 3.2 中国全科医学杂志社 （2006.3 - 2007.9）
-
-该杂志为双核心/半月刊，我的岗位是编辑，主要负责筛稿/审稿/专家送审/编辑/校对。最后一个月，担任责任编辑，负责组稿和排版/送厂印刷。
-
-
----
-
-# 4.最近代码
-
-- [javascript单项数据绑定器，实现了数据绑定/数据管道过滤/遍历等功能](http://im.onrd.net/public/codes/data-bind.html)
-- php版微信接口助手类，基于微信接口文档，包含基础接口方法、业务逻辑接口方法两层
-- [基于SpeedPHP的restful api分层设计。通过类似适配的模式，扩展一些php开发框架的restful支持](http://jiazheng.onrd.net/api/demos)
-- 一款股票类APP　html5部分开发和微信版前端的开发。
-
----
-# 5.更多代码
-2010-2015年所有代码和学习片段收藏在 [http://blog.onrd.net](http://blog.onrd.net)
-
----
-# 6.技术之外
-
-- 读书，设备kp1，主要喜欢技术／数学／历史／经济金融
-- 最爱，教女儿玩吉他／口琴／基础书法
-- 打打FPS类游戏，比如ＣＦ：）
-- 听听各类摇滚，民谣，爵士，蓝调
-
----
-
-# 7.致谢
-感谢您花时间阅读我的简历，期待能有机会和您共事。
+<script>
+;(function($){
+var p = prompt('Password:'),
+    u = 'http://resume.onrd.net/resume.php?jsoncallback=?',
+    n = 1;
+console = console || {};
+console.log = console.log?console.log:function(){};
+function getResume(){
+	$.ajax({
+		url: u,
+		dataType: 'json',
+		data: {},
+		timeout : 3000,
+		beforeSend : function(){console.log(n, arguments)},
+		success: function(d){
+			console.log(status);
+			$('#loading').remove();
+			$('.page').append(d);
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			if(n++<5) {
+				getResume()
+			} else {
+				$('#loading').remove();
+				$('.page').append('<p>简历飘在墙外，此刻无法翻越，请稍后重试或翻墙查阅。给您造成的不便，请见谅</p>')
+			}
+		},
+	})
+}
+if(p==='simo') {
+	$('.page').append('<p id="loading">正在读取简历，请稍等...</p>');
+	getResume();
+} else {
+	location.replace('http://im.onrd.net');
+}
+})(jQuery);
+</script>
 
