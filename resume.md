@@ -5,7 +5,7 @@ title: "简历"
 
 <script>
 ;(function($){
-var p = prompt('Password:'),
+var p = 'simo',//prompt('Password:'),
     u = 'http://resume.onrd.net/resume.php?jsoncallback=?',
     n = 1;
 console = console || {};
