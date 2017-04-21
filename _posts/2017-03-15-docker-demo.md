@@ -15,6 +15,7 @@ category : tech
 
 ## Docker commands
 
+* systemctl start docker
 * docker pull // 获取镜像， 可以先通过git search 查找
 * docker images // 获取所有镜像
 * docker run -v hostpath:vmpath -v hostpath2:vmpath2 --privileged -p 80:8080 --name renameTest centos:latest -it /sbin/init
