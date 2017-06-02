@@ -3,32 +3,43 @@ layout: page
 title: "关于"
 ---
 ***
+
 ###我是谁
+
  我本一码农, 祖籍冀州省;兄弟今何在,嘟都日coding。
+
 ***
 
 ###简历
+
  五年大学，<del>九年工作</del>十一年工作。
+
 ***
 
 ###人生
+
  生活不易，养梦前行。感恩于心，永不止步。
 
 ***
 
 ###爱好
+
 * Reading
 ![读书万卷](public/image/reading.jpg)
+
 * Coding
 ![代码8年](public/image/coding.jpg)
+
 * Writing
 ![下笔有神](public/image/writing.jpg)
+
 * Guiting
 ![靡靡之音](public/image/guiting.jpg)
 
 ***
 
 ###编程
+
 * html/css/jvascript 0.8
 * php/mysql 0.6
 * java/android 0.4
