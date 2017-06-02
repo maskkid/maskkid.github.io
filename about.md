@@ -4,41 +4,45 @@ title: "关于"
 ---
 ***
 
-###我是谁
+### 我是谁
 
  我本一码农, 祖籍冀州省;兄弟今何在,嘟都日coding。
 
 ***
 
-###简历
+### 简历
 
  五年大学，<del>九年工作</del>十一年工作。
 
 ***
 
-###人生
+### 人生
 
  生活不易，养梦前行。感恩于心，永不止步。
 
 ***
 
-###爱好
+### 爱好
 
 * Reading
+
 ![读书万卷](public/image/reading.jpg)
 
 * Coding
+
 ![代码8年](public/image/coding.jpg)
 
 * Writing
+
 ![下笔有神](public/image/writing.jpg)
 
 * Guiting
+
 ![靡靡之音](public/image/guiting.jpg)
 
 ***
 
-###编程
+### 编程
 
 * html/css/jvascript 0.8
 * php/mysql 0.6
@@ -52,7 +56,8 @@ title: "关于"
 
 ***
 
-###当前学习方向
+### 当前学习方向
+
 1. <del>2D游戏开发- cocos2D引擎<del>
 2. <del>3D游戏开发- unity3D + blender + three.js<del>
 3. <del>后端架构设计 2015.7.28</del>
@@ -72,7 +77,8 @@ title: "关于"
 
 ***
 
-###其他
+### 其他
+
 * <del>基于PI的小物联网入门</del>
 * <del>Linux入门</del>
 * <del>白鹭引擎 2015.8.1</del>
