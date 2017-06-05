@@ -26,19 +26,19 @@ title: "关于"
 
 * Reading
 
-![读书万卷](public/image/reading.jpg)
+![读书万卷](./public/image/reading.jpg)
 
 * Coding
 
-![代码8年](public/image/coding.jpg)
+![代码8年](./public/image/coding.jpg)
 
 * Writing
 
-![下笔有神](public/image/writing.jpg)
+![下笔有神](./public/image/writing.jpg)
 
 * Guiting
 
-![靡靡之音](public/image/guiting.jpg)
+![靡靡之音](./public/image/guiting.jpg)
 
 ***
 
