@@ -71,89 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2015-07-31-simo_ocr_lesson" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2015/07/31/2015-07-31-simo_ocr_lesson/" class="article-date">
-  <time class="dt-published" datetime="2015-07-31T06:20:00.000Z" itemprop="datePublished">2015-07-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tech/">tech</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2015/07/31/2015-07-31-simo_ocr_lesson/"> 个人OCR学习使用 </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <pre><code>        几年前接触ocr的东西，没有正式使用，只训练了几组中文字库就略过了。这次朋友正好用到，重温一边，软件和过程都整理文档方便备用。真正要做到ocr高识别，必须精通算法和神经网络。此篇为外行浅入，玩玩总可以吧。
-        感谢tesseract的开源，感谢google的各种支持，感谢网友们无私的文档奉献。
-</code></pre>
-<p><strong>语言、编译环境</strong></p>
-<ul>
-<li>java </li>
-<li>python（2.7） pip PIL</li>
-</ul>
-<p><strong>软件介绍</strong><br>            <img src="/public/image/ocr-soft.png" alt="ocr soft list and the docs"><br>            <img src="/public/image/ocr-soft1.png" alt="ocr soft"></p>
-<ul>
-<li><p>tesseract 30年前HP的开源的作品，后来google接管了。ocr不二的推荐。</p>
-</li>
-<li><p>jTessBoxEditor 库文件编辑工具</p>
-</li>
-<li><p>css222.py 图片二值化脚本，针对rgb值，还能再优化。</p>
-</li>
-<li><p>ttf2box.bat ttf文件调用tesseract命令</p>
-</li>
-<li><p>create.bat 最终生成训练库文件的脚本</p>
-</li>
-<li><p>tesseract </p>
-<ul>
-<li>下载地址：<a target="_blank" rel="noopener" href="https://code.google.com/p/tesseract-ocr/downloads/list">https://code.google.com/p/tesseract-ocr/downloads/list</a></li>
-</ul>
-</li>
-<li><p>jTessBoxEditor 训练工具</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://sourceforge.net/projects/vietocr/files/jTessBoxEditor/">http://sourceforge.net/projects/vietocr/files/jTessBoxEditor/</a></li>
-</ul>
-</li>
-</ul>
-<p><strong>操作流程</strong></p>
-<ol>
-<li>使用jTessBoxEditor拼合库文件， 格式ttf</li>
-<li>通过css222.py 进行二值化</li>
-<li>通过ttf2box.bat 生成box文件</li>
-<li>创建必须文件，参考文档。 font啊，charset啊等等</li>
-<li>通过create.bat生成最终库文件 (比如叫 abc.库文件后缀)</li>
-<li>把库文件导入tesseract的库目录</li>
-<li>识别：通过tesseract 目标文件 结果文件 -l abc</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/07/31/2015-07-31-simo_ocr_lesson/" data-id="cks9r4hz000151egsf7xtd0bw" data-title=" 个人OCR学习使用 " class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-2015-07-30-thinkphp_frame_source_code" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2015/07/29/2015-07-30-thinkphp_frame_source_code/" class="article-date">
@@ -260,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/07/29/2015-07-30-thinkphp_frame_source_code/" data-id="cks9r4hyy000x1egscjsn7ux2" data-title="ThinkPHP 源码分析" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/07/29/2015-07-30-thinkphp_frame_source_code/" data-id="cks9t2lun0013mqgsaxcrannf" data-title="ThinkPHP 源码分析" class="article-share-link">Teilen</a>
       
       
       
@@ -315,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/07/24/2015-07-25-react_base/" data-id="cks9r4hyx000w1egs51kj7kp8" data-title="ReactJs 总结" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/07/24/2015-07-25-react_base/" data-id="cks9t2lul000ymqgs9ogcdmdb" data-title="ReactJs 总结" class="article-share-link">Teilen</a>
       
       
       
@@ -378,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/07/15/2015-07-15-life_and_work/" data-id="cks9r4hyw000t1egs9codgw57" data-title="2015.06-2015.07 小结" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/07/15/2015-07-15-life_and_work/" data-id="cks9t2luk000wmqgsbukw07uk" data-title="2015.06-2015.07 小结" class="article-share-link">Teilen</a>
       
       
       
@@ -471,7 +388,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/05/27/2015-05-27-lost_now/" data-id="cks9r4hyv000r1egsb750eh6d" data-title="学习方向迷失mark新路" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/05/27/2015-05-27-lost_now/" data-id="cks9t2luj000umqgs392z7tkn" data-title="学习方向迷失mark新路" class="article-share-link">Teilen</a>
       
       
       
@@ -534,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/05/14/2015-05-14-arvr/" data-id="cks9r4hyu000p1egsciej38nx" data-title="ARVR-现实扩展-虚拟现实" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/05/14/2015-05-14-arvr/" data-id="cks9t2lui000qmqgs2e0r07en" data-title="ARVR-现实扩展-虚拟现实" class="article-share-link">Teilen</a>
       
       
       
@@ -621,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/05/06/2015-05-06-recent_summary/" data-id="cks9r4hyt000l1egs41rbaoi1" data-title="最近几天小总结" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/05/06/2015-05-06-recent_summary/" data-id="cks9t2lug000lmqgs7mip3mhu" data-title="最近几天小总结" class="article-share-link">Teilen</a>
       
       
       
@@ -676,7 +593,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/04/29/2015-04-29-cocos2d-js_log_4/" data-id="cks9r4hyr000g1egsa71w2449" data-title="Cocos2d-js总结笔记-4[扑克牌类游戏设计]" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/04/29/2015-04-29-cocos2d-js_log_4/" data-id="cks9t2luf000jmqgs4g4qfeba" data-title="Cocos2d-js总结笔记-4[扑克牌类游戏设计]" class="article-share-link">Teilen</a>
       
       
       
@@ -731,7 +648,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/04/28/2015-04-28-cocos2d-js_log_3/" data-id="cks9r4hyt000m1egs037vgnty" data-title="Cocos2d-js总结笔记-3[进阶学习要点]" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/04/28/2015-04-28-cocos2d-js_log_3/" data-id="cks9t2lua000fmqgs9k0oe6sa" data-title="Cocos2d-js总结笔记-3[进阶学习要点]" class="article-share-link">Teilen</a>
       
       
       
@@ -794,7 +711,74 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://im.onrd.net/2015/04/21/2015-04-21-cocos2d-js_log_2/" data-id="cks9r4hyp000b1egsak1ic25b" data-title="Cocos2d-js总结笔记-2[打地鼠设计]" class="article-share-link">Teilen</a>
+      <a data-url="https://im.onrd.net/2015/04/21/2015-04-21-cocos2d-js_log_2/" data-id="cks9t2lu9000emqgs2iqb5apo" data-title="Cocos2d-js总结笔记-2[打地鼠设计]" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2015-04-20-cocos2d-js_log_1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2015/04/20/2015-04-20-cocos2d-js_log_1/" class="article-date">
+  <time class="dt-published" datetime="2015-04-20T13:38:00.000Z" itemprop="datePublished">2015-04-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/game/">game</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2015/04/20/2015-04-20-cocos2d-js_log_1/">Cocos2d-js总结笔记-1[基础概念备忘]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>        前两天做了一个canvas的游戏，引擎使用的collie，小巧好用，兼容移动端事件。
+        在当时选择引擎的时候，倾向cocos2d。这几天重新温习了一下，记录下学习笔记。
+</code></pre>
+<h2 id="关于cocos2d-js"><a href="#关于cocos2d-js" class="headerlink" title="关于cocos2d-js"></a>关于cocos2d-js</h2><ul>
+<li><p>1.1 概述</p>
+<p>  <img src="http://cn.cocos2d-x.org/image/logo.png" alt="dd"><a target="_blank" rel="noopener" href="http://cn.cocos2d-x.org/">【官网】</a>Cocos2d-JS是Cocos2d-x的JavaScript版本，融合了Cocos2d-HTML5和Cocos2d-x JavaScript Bindings（JSB）。</p>
+</li>
+<li><p>1.2 概念图</p>
+<p>  <img src="http://cn.cocos2d-x.org/uploads/20140612172346_76249.png" alt="概念图"></p>
+</li>
+<li><p>1.3 概念关键词</p>
+<ul>
+<li><p>导演、场景、层、精灵、事件、时钟</p>
+</li>
+<li><p>director、scene、layer、sprite、event、timer</p>
+<pre><code>      概念基本和已知的flash动画概念类似，舞台、场景、剪辑、时间轴、事件等等。
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>1.4 游戏流程-对应技术 简单解析</p>
+<p>  一个游戏基本包含 初始化场景、游戏场景、游戏结束场景。</p>
+<p>  初始化场景包含开始游戏事件、切换场景动作（转场动画）；游戏中包含sprite自身动作处理、sprite运行动作处理、多sprite碰撞处理、帧定时器更新动作处理；游戏结束，类似开始，偏静态。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://im.onrd.net/2015/04/20/2015-04-20-cocos2d-js_log_1/" data-id="cks9t2lu80009mqgs8u2hamig" data-title="Cocos2d-js总结笔记-1[基础概念备忘]" class="article-share-link">Teilen</a>
       
       
       
@@ -871,11 +855,11 @@
           </li>
         
           <li>
-            <a href="/2018/12/05/2018-12-05-reset_posts/">重置</a>
+            <a href="/2018/11/05/2018-11-05-latest_books_1811/">忽然的闲忙</a>
           </li>
         
           <li>
-            <a href="/2018/11/05/2018-11-05-latest_books_1811/">忽然的闲忙</a>
+            <a href="/2018/11/01/2018-10-31-docker_black_hole/">docker总结</a>
           </li>
         
           <li>
