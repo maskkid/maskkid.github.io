@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>IPhelper简类 | Simo blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="基础助手类，设计包含配置加载&#x2F;ip数字互转&#x2F;ip归属地查询&#x2F;访问者ip获取&#x2F;ip的段归属验证。         &lt;?php           class IPhelper &amp;#123;              private static $banlist &#x3D; array();              private static $banedlist &#x3D; array();">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IPhelper简类">
+<meta property="og:url" content="https://im.onrd.net/2015/08/18/2015-08-18-IPhelper_class/index.html">
+<meta property="og:site_name" content="Simo blog">
+<meta property="og:description" content="基础助手类，设计包含配置加载&#x2F;ip数字互转&#x2F;ip归属地查询&#x2F;访问者ip获取&#x2F;ip的段归属验证。         &lt;?php           class IPhelper &amp;#123;              private static $banlist &#x3D; array();              private static $banedlist &#x3D; array();">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-08-18T06:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-13T01:40:59.204Z">
+<meta property="article:author" content="Simo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Simo blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Simo blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://im.onrd.net"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2015-08-18-IPhelper_class" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2015/08/18/2015-08-18-IPhelper_class/" class="article-date">
+  <time class="dt-published" datetime="2015-08-18T06:00:00.000Z" itemprop="datePublished">2015-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tech/">tech</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      IPhelper简类
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>基础助手类，设计包含配置加载/ip数字互转/ip归属地查询/访问者ip获取/ip的段归属验证。</p>
+<pre><code>        &lt;?php 
+
+        class IPhelper &#123;
+
+            private static $banlist = array();
+
+            private static $banedlist = array();
+
+            static function loadConfig($banlist=array()) &#123;
+            self::$banlist = $banlist;
+            &#125;
+
+            static function ip2num($ip) &#123;
+            if(strpos($ip,&#39;.&#39;)===false) return 0;
+            return bindec( decbin( ip2long($ip)));
+            &#125;
+
+            static function getip() &#123;
+            if (getenv(&#39;HTTP_CLIENT_IP&#39;)) &#123;
+                $ip = getenv(&#39;HTTP_CLIENT_IP&#39;);
+            &#125; elseif (getenv(&#39;HTTP_X_FORWARDED_FOR&#39;)) &#123;
+                $ip = getenv(&#39;HTTP_X_FORWARDED_FOR&#39;);
+            &#125; elseif (getenv(&#39;HTTP_X_FORWARDED&#39;)) &#123;
+                $ip = getenv(&#39;HTTP_X_FORWARDED&#39;);
+            &#125; elseif (getenv(&#39;HTTP_FORWARDED_FOR&#39;)) &#123;
+                $ip = getenv(&#39;HTTP_FORWARDED_FOR&#39;);
+
+            &#125; elseif (getenv(&#39;HTTP_FORWARDED&#39;)) &#123;
+                $ip = getenv(&#39;HTTP_FORWARDED&#39;);
+            &#125; else &#123;
+                $ip = $_SERVER[&#39;REMOTE_ADDR&#39;];
+            &#125;
+            return $ip;
+            &#125;
+            static function isBannedByiP($ip) &#123;
+            if(empty(self::$banlist)) return false;
+            foreach(self::$banlist as $item) &#123;
+                $_item = explode(&#39;.&#39;,$item);
+                $_sip = $_eip = null;
+                if(count($_item)==3) &#123; // xx.xx.xx
+                $_sip = self::ip2num($item.&#39;.0&#39;);
+                $_eip = self::ip2num($item.&#39;.255&#39;);
+                &#125;
+                if(strpos($item,&#39;-&#39;)) &#123; // xx.xx.xx.xx-yy.yy.yy.yy
+                $_item = explode(&#39;-&#39;, $item);
+                $_sip = self::ip2num($_item[0]);
+                $_eip = self::ip2num($_item[1]);
+                &#125;
+                if($_sip &amp;&amp; $_eip) &#123;
+                $_ip = self::ip2num($ip);
+                if ($_ip&gt;=$_sip &amp;&amp; $_ip&lt;=$_eip) &#123;
+                    return true;
+                    break;
+                &#125;
+                &#125;
+                if(count($_item)==4 &amp;&amp; $item==$ip) &#123; // xx.xx.xx.xx
+                return true;
+                break;
+                &#125;
+                $_item = null;
+            &#125;
+            return false;
+            &#125;
+
+            static function isBannedClient () &#123;
+            $_ip = self::getip();
+            if(isset(self::$banedlist[$_ip])) return true;
+            $_isban = self::isBannedByiP($_ip);
+            if($_isban) self::$banedlist[$_ip] = 1;
+            return $_isban;
+            &#125;
+        &#125;
+
+
+        // example
+        $banlist = array(
+            &#39;192.168.0.1&#39;,  // 单ip
+            &#39;192.168.1&#39;,    // 网段
+            &#39;127.0.0.2&#39;,    // 单ip
+            &#39;127.0.0.0-127.0.0.255&#39; // 网段
+        );
+
+        // 初始化加载配置
+        IPhelper::loadConfig($banlist);
+
+        $isban = IPhelper::isBannedClient();
+
+        if($isban) &#123;
+            echo &#39;IP:&#39; . IPhelper::getip() . &#39; is baned&#39;;
+        &#125;
+        ?&gt;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://im.onrd.net/2015/08/18/2015-08-18-IPhelper_class/" data-id="cks9r4hz3001a1egs1pl15vs4" data-title="IPhelper简类" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/19/2015-08-19-FEfreame_basein_reactjs_design/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          基于ReactJs的单页应用框架设计
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/12/2015-08-12-php_frame_design_init/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">php框架设计稿</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/data-structure/">data structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/family/">family</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/game/">game</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/safe/">safe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/">tech</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/work/">work</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/" rel="tag">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/diary/" style="font-size: 20px;">diary</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/13/blog-reboot/">Reboot</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/20/2018-12-20-centos7_tcp6_settings/">关于centos7.6 默认没有开启tcp6的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/05/2018-12-05-reset_posts/">重置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/05/2018-11-05-latest_books_1811/">忽然的闲忙</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/01/2018-11-01-work_flow_summary/">关于基于gitX的workflow</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Simo<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
