@@ -21,9 +21,9 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Simo blog">
+<meta property="og:title" content="足迹">
 <meta property="og:url" content="https://im.onrd.net/page/5/index.html">
-<meta property="og:site_name" content="Simo blog">
+<meta property="og:site_name" content="足迹">
 <meta property="og:locale">
 <meta property="article:author" content="Simo">
 <meta name="twitter:card" content="summary">
@@ -41,7 +41,7 @@
   };
 </script>
 
-  <title>Simo blog</title>
+  <title>足迹</title>
   
 
 
@@ -92,9 +92,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Simo blog</h1>
+      <h1 class="site-title">足迹</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">我们要面对现实，我们要忠于理想</p>
   </div>
 
   <div class="site-nav-right">
@@ -145,6 +146,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2015/04/20/2015-04-20-cocos2d-js_log_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Simo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="足迹">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/04/20/2015-04-20-cocos2d-js_log_1/" class="post-title-link" itemprop="url">Cocos2d-js总结笔记-1[基础概念备忘]</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2015-04-20 21:38:00" itemprop="dateCreated datePublished" datetime="2015-04-20T21:38:00+08:00">2015-04-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/game/" itemprop="url" rel="index"><span itemprop="name">game</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>        前两天做了一个canvas的游戏，引擎使用的collie，小巧好用，兼容移动端事件。
+        在当时选择引擎的时候，倾向cocos2d。这几天重新温习了一下，记录下学习笔记。
+</code></pre>
+<h2 id="关于cocos2d-js"><a href="#关于cocos2d-js" class="headerlink" title="关于cocos2d-js"></a>关于cocos2d-js</h2><ul>
+<li><p>1.1 概述</p>
+<p>  <img src="http://cn.cocos2d-x.org/image/logo.png" alt="dd"><a target="_blank" rel="noopener" href="http://cn.cocos2d-x.org/">【官网】</a>Cocos2d-JS是Cocos2d-x的JavaScript版本，融合了Cocos2d-HTML5和Cocos2d-x JavaScript Bindings（JSB）。</p>
+</li>
+<li><p>1.2 概念图</p>
+<p>  <img src="http://cn.cocos2d-x.org/uploads/20140612172346_76249.png" alt="概念图"></p>
+</li>
+<li><p>1.3 概念关键词</p>
+<ul>
+<li><p>导演、场景、层、精灵、事件、时钟</p>
+</li>
+<li><p>director、scene、layer、sprite、event、timer</p>
+<pre><code>      概念基本和已知的flash动画概念类似，舞台、场景、剪辑、时间轴、事件等等。
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>1.4 游戏流程-对应技术 简单解析</p>
+<p>  一个游戏基本包含 初始化场景、游戏场景、游戏结束场景。</p>
+<p>  初始化场景包含开始游戏事件、切换场景动作（转场动画）；游戏中包含sprite自身动作处理、sprite运行动作处理、多sprite碰撞处理、帧定时器更新动作处理；游戏结束，类似开始，偏静态。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2015/04/15/2015-04-15-First_game/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -154,7 +253,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -231,7 +330,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -309,7 +408,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -386,7 +485,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -489,7 +588,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -577,7 +676,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -729,12 +828,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">

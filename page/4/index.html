@@ -21,9 +21,9 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Simo blog">
+<meta property="og:title" content="足迹">
 <meta property="og:url" content="https://im.onrd.net/page/4/index.html">
-<meta property="og:site_name" content="Simo blog">
+<meta property="og:site_name" content="足迹">
 <meta property="og:locale">
 <meta property="article:author" content="Simo">
 <meta name="twitter:card" content="summary">
@@ -41,7 +41,7 @@
   };
 </script>
 
-  <title>Simo blog</title>
+  <title>足迹</title>
   
 
 
@@ -92,9 +92,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Simo blog</h1>
+      <h1 class="site-title">足迹</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">我们要面对现实，我们要忠于理想</p>
   </div>
 
   <div class="site-nav-right">
@@ -145,6 +146,120 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2015/07/31/2015-07-31-simo_ocr_lesson/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Simo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="足迹">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/07/31/2015-07-31-simo_ocr_lesson/" class="post-title-link" itemprop="url"> 个人OCR学习使用 </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2015-07-31 14:20:00" itemprop="dateCreated datePublished" datetime="2015-07-31T14:20:00+08:00">2015-07-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>        几年前接触ocr的东西，没有正式使用，只训练了几组中文字库就略过了。这次朋友正好用到，重温一边，软件和过程都整理文档方便备用。真正要做到ocr高识别，必须精通算法和神经网络。此篇为外行浅入，玩玩总可以吧。
+        感谢tesseract的开源，感谢google的各种支持，感谢网友们无私的文档奉献。
+</code></pre>
+<p><strong>语言、编译环境</strong></p>
+<ul>
+<li>java </li>
+<li>python（2.7） pip PIL</li>
+</ul>
+<p><strong>软件介绍</strong><br>            <img src="/public/image/ocr-soft.png" alt="ocr soft list and the docs"><br>            <img src="/public/image/ocr-soft1.png" alt="ocr soft"></p>
+<ul>
+<li><p>tesseract 30年前HP的开源的作品，后来google接管了。ocr不二的推荐。</p>
+</li>
+<li><p>jTessBoxEditor 库文件编辑工具</p>
+</li>
+<li><p>css222.py 图片二值化脚本，针对rgb值，还能再优化。</p>
+</li>
+<li><p>ttf2box.bat ttf文件调用tesseract命令</p>
+</li>
+<li><p>create.bat 最终生成训练库文件的脚本</p>
+</li>
+<li><p>tesseract </p>
+<ul>
+<li>下载地址：<a target="_blank" rel="noopener" href="https://code.google.com/p/tesseract-ocr/downloads/list">https://code.google.com/p/tesseract-ocr/downloads/list</a></li>
+</ul>
+</li>
+<li><p>jTessBoxEditor 训练工具</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://sourceforge.net/projects/vietocr/files/jTessBoxEditor/">http://sourceforge.net/projects/vietocr/files/jTessBoxEditor/</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>操作流程</strong></p>
+<ol>
+<li>使用jTessBoxEditor拼合库文件， 格式ttf</li>
+<li>通过css222.py 进行二值化</li>
+<li>通过ttf2box.bat 生成box文件</li>
+<li>创建必须文件，参考文档。 font啊，charset啊等等</li>
+<li>通过create.bat生成最终库文件 (比如叫 abc.库文件后缀)</li>
+<li>把库文件导入tesseract的库目录</li>
+<li>识别：通过tesseract 目标文件 结果文件 -l abc</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2015/07/29/2015-07-30-thinkphp_frame_source_code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -154,7 +269,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -303,7 +418,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -389,7 +504,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -483,7 +598,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -607,7 +722,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -701,7 +816,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -819,7 +934,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -905,7 +1020,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -991,7 +1106,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
+      <meta itemprop="name" content="足迹">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -1057,104 +1172,6 @@
 </ol>
 <p>完成基本动作，后面需要添加分层背景，覆盖隐藏地鼠。</p>
 <p><a target="_blank" rel="noopener" href="https://onrd.net/game/mouse">打地鼠</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2015/04/20/2015-04-20-cocos2d-js_log_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Simo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Simo blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2015/04/20/2015-04-20-cocos2d-js_log_1/" class="post-title-link" itemprop="url">Cocos2d-js总结笔记-1[基础概念备忘]</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2015-04-20 21:38:00" itemprop="dateCreated datePublished" datetime="2015-04-20T21:38:00+08:00">2015-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/game/" itemprop="url" rel="index"><span itemprop="name">game</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <pre><code>        前两天做了一个canvas的游戏，引擎使用的collie，小巧好用，兼容移动端事件。
-        在当时选择引擎的时候，倾向cocos2d。这几天重新温习了一下，记录下学习笔记。
-</code></pre>
-<h2 id="关于cocos2d-js"><a href="#关于cocos2d-js" class="headerlink" title="关于cocos2d-js"></a>关于cocos2d-js</h2><ul>
-<li><p>1.1 概述</p>
-<p>  <img src="http://cn.cocos2d-x.org/image/logo.png" alt="dd"><a target="_blank" rel="noopener" href="http://cn.cocos2d-x.org/">【官网】</a>Cocos2d-JS是Cocos2d-x的JavaScript版本，融合了Cocos2d-HTML5和Cocos2d-x JavaScript Bindings（JSB）。</p>
-</li>
-<li><p>1.2 概念图</p>
-<p>  <img src="http://cn.cocos2d-x.org/uploads/20140612172346_76249.png" alt="概念图"></p>
-</li>
-<li><p>1.3 概念关键词</p>
-<ul>
-<li><p>导演、场景、层、精灵、事件、时钟</p>
-</li>
-<li><p>director、scene、layer、sprite、event、timer</p>
-<pre><code>      概念基本和已知的flash动画概念类似，舞台、场景、剪辑、时间轴、事件等等。
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>1.4 游戏流程-对应技术 简单解析</p>
-<p>  一个游戏基本包含 初始化场景、游戏场景、游戏结束场景。</p>
-<p>  初始化场景包含开始游戏事件、切换场景动作（转场动画）；游戏中包含sprite自身动作处理、sprite运行动作处理、多sprite碰撞处理、帧定时器更新动作处理；游戏结束，类似开始，偏静态。</p>
-</li>
-</ul>
 
       
     </div>
@@ -1239,12 +1256,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
