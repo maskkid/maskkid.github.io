@@ -429,102 +429,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2018/11/01/2018-11-01-work_flow_summary/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Simo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="足迹">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/11/01/2018-11-01-work_flow_summary/" class="post-title-link" itemprop="url">关于基于gitX的workflow</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-11-01 21:38:00" itemprop="dateCreated datePublished" datetime="2018-11-01T21:38:00+08:00">2018-11-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>产品一般会经过需求(播种)、研发(孕育)、上线(出生)几个过程，整个流程涉及到多个独立个体（团队），这期间的通信和日志得非常重要，因为这对于一个产品、一个公司都是一套动态标准化的实例，有助于适应团队的标准化工作流的产生。这里，有一个比较特殊的团体，就是开发团体，尤其是互联网企业，而git这种代码管理工具也逐渐被扩展成以研发为中心，向上下游扩展的工作流工具。</p>
-<p>目前github,gitlab,gogs等等基本的都包含issue（需求、测试），codes（研发，又包含并行、串行代码变更的管理方式），甚至涉及项目管理、基本的成本统计等。这里，简单记录下关于代码阶段的gitX workflow</p>
-<hr>
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>主要根据这几点因素考虑选型</p>
-<ul>
-<li>项目开发周期</li>
-<li>项目生命周期</li>
-<li>项目开发所处阶段</li>
-<li>团队人员规模</li>
-<li>团队技能基础</li>
-</ul>
-<p>基础分支建议：</p>
-<pre><code>master(发版)
-
-develop(开发)
-
-    feature-xxx 
-
-test(需不需要测试)
-
-hotfix
-</code></pre>
-<p>总之，原则就是 “适度”，多个分支之间就是互相守候的关系，根源在于并行，只要团队和项目接受，可以从简到繁。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2018/11/01/2018-10-31-docker_black_hole/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -629,6 +533,102 @@ hotfix
 <li>问题定位、跟踪、调试工具</li>
 </ul>
 <hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2018/11/01/2018-11-01-work_flow_summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Simo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="足迹">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/01/2018-11-01-work_flow_summary/" class="post-title-link" itemprop="url">关于基于gitX的workflow</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-01 21:38:00" itemprop="dateCreated datePublished" datetime="2018-11-01T21:38:00+08:00">2018-11-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>产品一般会经过需求(播种)、研发(孕育)、上线(出生)几个过程，整个流程涉及到多个独立个体（团队），这期间的通信和日志得非常重要，因为这对于一个产品、一个公司都是一套动态标准化的实例，有助于适应团队的标准化工作流的产生。这里，有一个比较特殊的团体，就是开发团体，尤其是互联网企业，而git这种代码管理工具也逐渐被扩展成以研发为中心，向上下游扩展的工作流工具。</p>
+<p>目前github,gitlab,gogs等等基本的都包含issue（需求、测试），codes（研发，又包含并行、串行代码变更的管理方式），甚至涉及项目管理、基本的成本统计等。这里，简单记录下关于代码阶段的gitX workflow</p>
+<hr>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>主要根据这几点因素考虑选型</p>
+<ul>
+<li>项目开发周期</li>
+<li>项目生命周期</li>
+<li>项目开发所处阶段</li>
+<li>团队人员规模</li>
+<li>团队技能基础</li>
+</ul>
+<p>基础分支建议：</p>
+<pre><code>master(发版)
+
+develop(开发)
+
+    feature-xxx 
+
+test(需不需要测试)
+
+hotfix
+</code></pre>
+<p>总之，原则就是 “适度”，多个分支之间就是互相守候的关系，根源在于并行，只要团队和项目接受，可以从简到繁。</p>
 
       
     </div>
