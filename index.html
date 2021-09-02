@@ -146,7 +146,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2021/09/02/2021-09-01-shuxue-1/">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2021/09/02/2021-09-01-svm-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -160,7 +160,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/09/02/2021-09-01-shuxue-1/" class="post-title-link" itemprop="url">支持向量机SVM</a>
+            <a href="/2021/09/02/2021-09-01-svm-1/" class="post-title-link" itemprop="url">支持向量机SVM</a>
         </h2>
 
         <div class="post-meta">
@@ -171,7 +171,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-09-02 12:00:00 / Modified: 11:19:47" itemprop="dateCreated datePublished" datetime="2021-09-02T12:00:00+08:00">2021-09-02</time>
+              <time title="Created: 2021-09-02 12:00:00 / Modified: 11:34:29" itemprop="dateCreated datePublished" datetime="2021-09-02T12:00:00+08:00">2021-09-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -194,18 +194,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>支持向量机，是用于分类的一种算法，主要通过查找最大分类间隔的决策面，实现数据切割。</p>
-<h2 id="数学模型"><a href="#数学模型" class="headerlink" title="数学模型"></a>数学模型</h2><h3 id="超平面方程"><a href="#超平面方程" class="headerlink" title="超平面方程"></a>超平面方程</h3><p>$$<br>y = ax + b\</p>
-<p>\—\</p>
+          <p><strong><em>对typora公式支持有问题，截图预览。源码可使用支持LaTeX的工具查看。</em></strong></p>
+<figure>
+<img src="/images/svm-1-1.png" alt="公式截图" /><figcaption aria-hidden="true">公式截图</figcaption>
+</figure>
+<hr />
+<h2 id="基础">基础</h2>
+<p>支持向量机，是用于分类的一种算法，主要通过查找最大分类间隔的决策面，实现数据切割。</p>
+<h2 id="数学模型">数学模型</h2>
+<h3 id="超平面方程">超平面方程</h3>
+<p>$$ y = ax + b\</p>
+<p>\---\</p>
 <p>x_2 = ax_1 + b\</p>
-<p>\—\</p>
+<p>\---\</p>
 <p>ax_1 - x_2 + b = 0\</p>
-<p>\—\</p>
-<p>\left[<br> \begin{matrix}<br>   a &amp; -1<br>  \end{matrix}<br>  \right]<br>  \left[<br> \begin{matrix}<br>   x_1 \<br>   x_2<br>  \end{matrix}<br>  \right]<br>  +b=0\</p>
-<p>\—\</p>
-<p>\omega^T\vec{x}+b=0\<br>注: （二维） \omega=[\omega_1,\omega_2]^T，x=[x_1,x_2]^T\<br>（多维）\omega=[\omega_1,\omega_2,…,\omega_n]^T，x=[x_1,x_2,…,x_n]^T\<br>$$</p>
-<h3 id="分类间隔方程"><a href="#分类间隔方程" class="headerlink" title="分类间隔方程"></a>分类间隔方程</h3><p>$$<br>点到直线的距离：<br>d=\left|<br>\frac{Ax_0+By_0+C}{\sqrt{A^2+B^2}}<br>\right|<br>\<br>拓展到多维：<br>d=\frac{|\omega^Tx+\gamma|}{||\omega||}<br>\注：d就是【分类间隔】。其中||\omega||表示w的二范数<br>$$</p>
-<h3 id="约束条件"><a href="#约束条件" class="headerlink" title="约束条件"></a>约束条件</h3>
+<p>\---\</p>
+<p>+b=0\</p>
+<p>\---\</p>
+<p>^T+b=0\ 注: （二维） =[_1,_2]<sup>T，x=[x_1,x_2]</sup>T\ （多维）=[_1,_2,...,_n]<sup>T，x=[x_1,x_2,...,x_n]</sup>T\ $$</p>
+<h3 id="分类间隔方程">分类间隔方程</h3>
+<p><span class="math display">\[
+点到直线的距离：
+d=\left|
+\frac{Ax_0+By_0+C}{\sqrt{A^2+B^2}}
+\right|
+\\
+拓展到多维：
+d=\frac{|\omega^Tx+\gamma|}{||\omega||}
+\\注：d就是【分类间隔】。其中||\omega||表示w的二范数
+\]</span></p>
+<h3 id="约束条件">约束条件</h3>
+
       
     </div>
 
@@ -224,7 +243,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2021/09/01/2021-09-01-svm-1/">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2021/09/01/2021-09-01-shuxue-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -238,7 +257,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/09/01/2021-09-01-svm-1/" class="post-title-link" itemprop="url">线性代数基础</a>
+            <a href="/2021/09/01/2021-09-01-shuxue-1/" class="post-title-link" itemprop="url">线性代数基础</a>
         </h2>
 
         <div class="post-meta">
@@ -255,7 +274,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-02 10:39:38" itemprop="dateModified" datetime="2021-09-02T10:39:38+08:00">2021-09-02</time>
+                <time title="Modified: 2021-09-02 11:28:52" itemprop="dateModified" datetime="2021-09-02T11:28:52+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,8 +298,12 @@
 
       
           <p>一直在应用层学机器学习相关的知识，最近有些时间，正好补一下相关的数学基础和算法基础。作为笔记，数学相关的主要在这个月学习一边线性代数、概率论、统计学、微积分。</p>
-<p>线性代数这部分，主要从知乎和一些技术博客温习了一下知识结构，以下笔记主要是山大秦静老师的公开课笔记。<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i741157ju">《线性代数-山东大学秦静》</a></p>
-<h1 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h1><h2 id="行列阵"><a href="#行列阵" class="headerlink" title="行列阵"></a>行列阵</h2><h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2>
+<p>线性代数这部分，主要从知乎和一些技术博客温习了一下知识结构，以下笔记主要是山大秦静老师的公开课笔记。 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i741157ju">《线性代数-山东大学秦静》</a></p>
+<h1 id="线性代数">线性代数</h1>
+<h2 id="行列阵">行列阵</h2>
+<h2 id="矩阵">矩阵</h2>
+<h2 id="向量">向量</h2>
+
       
     </div>
 
@@ -486,13 +509,18 @@
 
       
           <p>这次离职，中间正好有几件重要的事儿要办，有闲有忙了十几天。很欣慰，把藏货的书看了几本，简单总结一下，留个记录。</p>
-<h2 id="乌合之众、影响力、社会网络分析模型"><a href="#乌合之众、影响力、社会网络分析模型" class="headerlink" title="乌合之众、影响力、社会网络分析模型"></a>乌合之众、影响力、社会网络分析模型</h2><p>这基本算上重温，很短的时间速读完成，主要是针对群体分类、心理特点、干预、数学模型（科学原理、规律）等方面</p>
-<h2 id="产品方法论"><a href="#产品方法论" class="headerlink" title="产品方法论"></a>产品方法论</h2><p>这本新买的，速读完成，真心不错，是产品经理进阶6册版的方法论篇，主要三方资源协调，拔高支撑团队地位</p>
-<h2 id="敏捷武士"><a href="#敏捷武士" class="headerlink" title="敏捷武士"></a>敏捷武士</h2><p>也是新买的一本，主要心得：敏捷根核心就是团队，成员必须目标一致（拥抱变化）、技能广、对目标的认可高于自身感受。其他都是敏捷的形式，电梯演讲，站会，完全可以灵活变化，主要还是关注团队的斗志。当然，必须得做好事有好的发展，不能嘴炮</p>
-<h2 id="容器技术"><a href="#容器技术" class="headerlink" title="容器技术"></a>容器技术</h2><p>主要docker和k8s。</p>
+<h2 id="乌合之众影响力社会网络分析模型">乌合之众、影响力、社会网络分析模型</h2>
+<p>这基本算上重温，很短的时间速读完成，主要是针对群体分类、心理特点、干预、数学模型（科学原理、规律）等方面</p>
+<h2 id="产品方法论">产品方法论</h2>
+<p>这本新买的，速读完成，真心不错，是产品经理进阶6册版的方法论篇，主要三方资源协调，拔高支撑团队地位</p>
+<h2 id="敏捷武士">敏捷武士</h2>
+<p>也是新买的一本，主要心得：敏捷根核心就是团队，成员必须目标一致（拥抱变化）、技能广、对目标的认可高于自身感受。其他都是敏捷的形式，电梯演讲，站会，完全可以灵活变化，主要还是关注团队的斗志。当然，必须得做好事有好的发展，不能嘴炮</p>
+<h2 id="容器技术">容器技术</h2>
+<p>主要docker和k8s。</p>
 <p>docker的单机部署和内网网络通信方案</p>
 <p>容器编排方案，公网通信方案</p>
-<h2 id="nodejs-javascript"><a href="#nodejs-javascript" class="headerlink" title="nodejs/javascript"></a>nodejs/javascript</h2><p>只是看看前端的设计模式变种方案，心凉于mvvm这种05年就随着阿瓦隆产生到现在才被前端大神们续命的方案。所有语言的可视化方案，都会转到前端的，唯一的差别就是，5年或者10年。</p>
+<h2 id="nodejsjavascript">nodejs/javascript</h2>
+<p>只是看看前端的设计模式变种方案，心凉于mvvm这种05年就随着阿瓦隆产生到现在才被前端大神们续命的方案。所有语言的可视化方案，都会转到前端的，唯一的差别就是，5年或者10年。</p>
 <p>还是不看好nodejs，虽然工程化方面，前端算是不错了，但是一个乱啊，完全不构成普通开发的经验值。能力到，直接golang，技术栈在java的也不错。</p>
 
       
@@ -567,56 +595,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>很看好一些可预见发展强势的业务场景下的微服务架构，从硬件到软件，从技术架构到业务隔离，彻底解耦，并且从软硬两层制定了严格的耦合场景标准。</p>
+          <h2 id="背景">背景</h2>
+<p>很看好一些可预见发展强势的业务场景下的微服务架构，从硬件到软件，从技术架构到业务隔离，彻底解耦，并且从软硬两层制定了严格的耦合场景标准。</p>
 <p>之前一直用PHP做项目，语言本身可选择性很低，因为需要配合nginx和php-fpm等，基于虚拟化的微服务架构，显得特别复杂和臃肿。有一段时间，想彻底转到golang（主要是早期七牛全go架构和用golang做过一个跨平台的监控系统, 玩的爽到不要不要的）,另外一个选择就是nodejs（这货，从一出来，就不看好，之前一直基于v8解析，另外那时候js的工程化生态非常弱）,但在天津这个国际化大都市的互联网环境里，go的生存空间太小了，也只能当工具。</p>
 <p>这几天，正好有时间，抛开语言，重新从架构垂直分层的底层开始准备，大概跟踪了docker最新的一些生态玩法。</p>
-<hr>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
-<li>docker image</li>
-<li>docker container</li>
-<li>commit/push/save</li>
-<li><em>DockerFile</em></li>
-<li>network </li>
-<li>link</li>
-<li>volume</li>
-<li>ports</li>
-<li>docker-compose<ul>
-<li>services</li>
-<li>links</li>
-<li>networks</li>
-<li>image</li>
-<li>build<ul>
-<li>context</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><ul>
-<li>k8s</li>
-</ul>
-<hr>
-<h2 id="知识逻辑"><a href="#知识逻辑" class="headerlink" title="知识逻辑"></a>知识逻辑</h2><ul>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>## 基础</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>## 集群</td>
+</tr>
+<tr class="even">
+<td>* k8s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="知识逻辑">知识逻辑</h2>
+<ul>
 <li>一个docker颗粒度</li>
-<li>多个docker通信<ul>
-<li>基于网络<ul>
+<li>多个docker通信
+<ul>
+<li>基于网络
+<ul>
 <li>基本四种，直连，桥接，none，container</li>
-</ul>
-</li>
+</ul></li>
 <li>基于io共享</li>
 <li>网络和io继承</li>
-</ul>
-</li>
+</ul></li>
 <li>docker基本管理，变更、组合(docker file, compose)</li>
 <li>分布式docker管理工具**(k8s)</li>
 </ul>
-<hr>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
-<li>大量docker容器内软件的数据规划没有标准，比如日志、文件、数据等等</li>
-<li>问题定位、跟踪、调试工具</li>
-</ul>
-<hr>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## 问题</td>
+</tr>
+<tr class="even">
+<td>* 大量docker容器内软件的数据规划没有标准，比如日志、文件、数据等等 * 问题定位、跟踪、调试工具</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -690,10 +718,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>产品一般会经过需求(播种)、研发(孕育)、上线(出生)几个过程，整个流程涉及到多个独立个体（团队），这期间的通信和日志得非常重要，因为这对于一个产品、一个公司都是一套动态标准化的实例，有助于适应团队的标准化工作流的产生。这里，有一个比较特殊的团体，就是开发团体，尤其是互联网企业，而git这种代码管理工具也逐渐被扩展成以研发为中心，向上下游扩展的工作流工具。</p>
+          <h2 id="概要">概要</h2>
+<p>产品一般会经过需求(播种)、研发(孕育)、上线(出生)几个过程，整个流程涉及到多个独立个体（团队），这期间的通信和日志得非常重要，因为这对于一个产品、一个公司都是一套动态标准化的实例，有助于适应团队的标准化工作流的产生。这里，有一个比较特殊的团体，就是开发团体，尤其是互联网企业，而git这种代码管理工具也逐渐被扩展成以研发为中心，向上下游扩展的工作流工具。</p>
 <p>目前github,gitlab,gogs等等基本的都包含issue（需求、测试），codes（研发，又包含并行、串行代码变更的管理方式），甚至涉及项目管理、基本的成本统计等。这里，简单记录下关于代码阶段的gitX workflow</p>
-<hr>
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>主要根据这几点因素考虑选型</p>
+<hr />
+<h2 id="选择">选择</h2>
+<p>主要根据这几点因素考虑选型</p>
 <ul>
 <li>项目开发周期</li>
 <li>项目生命周期</li>
@@ -710,8 +740,7 @@ develop(开发)
 
 test(需不需要测试)
 
-hotfix
-</code></pre>
+hotfix</code></pre>
 <p>总之，原则就是 “适度”，多个分支之间就是互相守候的关系，根源在于并行，只要团队和项目接受，可以从简到繁。</p>
 
       
@@ -786,14 +815,17 @@ hotfix
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="为什么选择react"><a href="#为什么选择react" class="headerlink" title="为什么选择react"></a>为什么选择react</h1><p>经历过前端从08年开始的抬头，一直到伴随着电脑和智能硬件的普及而起的纷乱复杂时期，前端真的不适合长期跟前沿跑，大长腿也不可能够得着。根源在于，前端的几项技术，没有一个标准化的实例产出方，导致“人人都是产品经理”。不敢苟同，前端框架从适用范围、方向、行业、简繁每个定语都能冒出一个框架，跟着浏览器这个大坑的屁股后面，不断的推陈出新，会写hello就敢出个框架，何时出头？一乱一治，总算到了个人认为很好的一个阶段，就是数据结构化的前端！mvx,mvvm类框架，让操作视图逻辑变成了操作数据逻辑，视图UI组件化+跨终端, 这里，对应的一个技术市场就是<em>基于数据结构的脚手架体系</em>,just do it,在几天的业余时间，做了一套基础的代码生成工具，基于最爱的golang：）</p>
+          <h1 id="为什么选择react">为什么选择react</h1>
+<p>经历过前端从08年开始的抬头，一直到伴随着电脑和智能硬件的普及而起的纷乱复杂时期，前端真的不适合长期跟前沿跑，大长腿也不可能够得着。根源在于，前端的几项技术，没有一个标准化的实例产出方，导致“人人都是产品经理”。不敢苟同，前端框架从适用范围、方向、行业、简繁每个定语都能冒出一个框架，跟着浏览器这个大坑的屁股后面，不断的推陈出新，会写hello就敢出个框架，何时出头？一乱一治，总算到了个人认为很好的一个阶段，就是数据结构化的前端！mvx,mvvm类框架，让操作视图逻辑变成了操作数据逻辑，视图UI组件化+跨终端, 这里，对应的一个技术市场就是<em>基于数据结构的脚手架体系</em>,just do it,在几天的业余时间，做了一套基础的代码生成工具，基于最爱的golang：）</p>
 <p>说回react的选择，个人对数据控制倾向于单向流，尤其是中大型项目，主要是简单可控，并且需要的时候，随时可以通过基于setter，getter扩展成部分双向。（mobx在想到的时候，就出来了，轮子妥妥的，尤其是以注解方式挂接，无公害，利于java、c#往前转），另外一点，RN的优势非常明显。</p>
-<h1 id="常用选型"><a href="#常用选型" class="headerlink" title="常用选型"></a>常用选型</h1><p>router </p>
+<h1 id="常用选型">常用选型</h1>
+<p>router</p>
 <p>ui - antd</p>
 <p>data &amp;&amp; message - redux,mobx,rx</p>
-<p>service - fetch,lodash….</p>
-<h1 id="选型秘籍"><a href="#选型秘籍" class="headerlink" title="选型秘籍"></a>选型秘籍</h1><p>…<br>临时有事儿，后补</p>
-<hr>
+<p>service - fetch,lodash....</p>
+<h1 id="选型秘籍">选型秘籍</h1>
+<p>... 临时有事儿，后补</p>
+<hr />
 
       
     </div>
@@ -945,11 +977,13 @@ hotfix
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>在各种群、文章等等途径，不断看到有人要star，要fork，好像在一部分码农身上形成了一种风气。</p>
-<h2 id="xxxk"><a href="#xxxk" class="headerlink" title="xxxk"></a>xxxk</h2><p>观点上，赞同v2，拒绝创造垃圾资源，不是用户主动行为的产出物，必然会影响从众的判断。宣传没问题，直接要结果就跟讨饭区别不大了。</p>
+          <h2 id="现象">现象</h2>
+<p>在各种群、文章等等途径，不断看到有人要star，要fork，好像在一部分码农身上形成了一种风气。</p>
+<h2 id="xxxk">xxxk</h2>
+<p>观点上，赞同v2，拒绝创造垃圾资源，不是用户主动行为的产出物，必然会影响从众的判断。宣传没问题，直接要结果就跟讨饭区别不大了。</p>
 <p>逻辑和判断很重要，此现象跟淘宝刷单有多大区别？</p>
 <p>伴随着网速提升和流量成本的降低,信息一定会以超大指数增长，决绝垃圾信息，从我做起：）</p>
-<hr>
+<hr />
 
       
     </div>

@@ -202,23 +202,8 @@
       
           <pre><code>    重温几天cocos2d引擎，渐入佳境，决定做个小游戏练手。反正是玩，那就简单的从打地鼠开始吧：）
 
-    一切始于思路。
-</code></pre>
-<p>##基本设计</p>
-<ol>
-<li>场景设计<ul>
-<li>游戏loading场景</li>
-<li>游戏主页场景</li>
-<li>主游戏动作场景</li>
-<li>gameover场景</li>
-</ul>
-</li>
-<li>逻辑设计<ul>
-<li>创建地鼠工厂，布局地鼠，处理地鼠洞；</li>
-<li>地鼠类主要功能：自运行，点击事件处理（停止自运行、点击动作业务、回调自运行）</li>
-</ul>
-</li>
-</ol>
+    一切始于思路。</code></pre>
+<p>##基本设计 1. 场景设计 * 游戏loading场景 * 游戏主页场景 * 主游戏动作场景 * gameover场景 2. 逻辑设计 * 创建地鼠工厂，布局地鼠，处理地鼠洞； * 地鼠类主要功能：自运行，点击事件处理（停止自运行、点击动作业务、回调自运行）</p>
 <p>完成基本动作，后面需要添加分层背景，覆盖隐藏地鼠。</p>
 <p><a target="_blank" rel="noopener" href="https://onrd.net/game/mouse">打地鼠</a></p>
 
@@ -295,29 +280,24 @@
 
       
           <pre><code>        前两天做了一个canvas的游戏，引擎使用的collie，小巧好用，兼容移动端事件。
-        在当时选择引擎的时候，倾向cocos2d。这几天重新温习了一下，记录下学习笔记。
-</code></pre>
-<h2 id="关于cocos2d-js"><a href="#关于cocos2d-js" class="headerlink" title="关于cocos2d-js"></a>关于cocos2d-js</h2><ul>
+        在当时选择引擎的时候，倾向cocos2d。这几天重新温习了一下，记录下学习笔记。</code></pre>
+<h2 id="关于cocos2d-js">关于cocos2d-js</h2>
+<ul>
 <li><p>1.1 概述</p>
-<p>  <img src="http://cn.cocos2d-x.org/image/logo.png" alt="dd"><a target="_blank" rel="noopener" href="http://cn.cocos2d-x.org/">【官网】</a>Cocos2d-JS是Cocos2d-x的JavaScript版本，融合了Cocos2d-HTML5和Cocos2d-x JavaScript Bindings（JSB）。</p>
-</li>
+<p><img src="http://cn.cocos2d-x.org/image/logo.png" alt="dd" /><a target="_blank" rel="noopener" href="http://cn.cocos2d-x.org">【官网】</a>Cocos2d-JS是Cocos2d-x的JavaScript版本，融合了Cocos2d-HTML5和Cocos2d-x JavaScript Bindings（JSB）。</p></li>
 <li><p>1.2 概念图</p>
-<p>  <img src="http://cn.cocos2d-x.org/uploads/20140612172346_76249.png" alt="概念图"></p>
-</li>
+<figure>
+<img src="http://cn.cocos2d-x.org/uploads/20140612172346_76249.png" alt="概念图" /><figcaption aria-hidden="true">概念图</figcaption>
+</figure></li>
 <li><p>1.3 概念关键词</p>
 <ul>
-<li><p>导演、场景、层、精灵、事件、时钟</p>
-</li>
+<li><p>导演、场景、层、精灵、事件、时钟</p></li>
 <li><p>director、scene、layer、sprite、event、timer</p>
-<pre><code>      概念基本和已知的flash动画概念类似，舞台、场景、剪辑、时间轴、事件等等。
-</code></pre>
-</li>
-</ul>
-</li>
+<pre><code>      概念基本和已知的flash动画概念类似，舞台、场景、剪辑、时间轴、事件等等。</code></pre></li>
+</ul></li>
 <li><p>1.4 游戏流程-对应技术 简单解析</p>
-<p>  一个游戏基本包含 初始化场景、游戏场景、游戏结束场景。</p>
-<p>  初始化场景包含开始游戏事件、切换场景动作（转场动画）；游戏中包含sprite自身动作处理、sprite运行动作处理、多sprite碰撞处理、帧定时器更新动作处理；游戏结束，类似开始，偏静态。</p>
-</li>
+<p>一个游戏基本包含 初始化场景、游戏场景、游戏结束场景。</p>
+<p>初始化场景包含开始游戏事件、切换场景动作（转场动画）；游戏中包含sprite自身动作处理、sprite运行动作处理、多sprite碰撞处理、帧定时器更新动作处理；游戏结束，类似开始，偏静态。</p></li>
 </ul>
 
       
@@ -395,7 +375,7 @@
           <p>朋友公司的一个小游戏，几年前自己做过一套基于坐标的事件框架，等准备碰撞检测的时候，分神去学算法了，后来就是玩cocos2d-js，然后经过这几年，跟很多技术一样，又荒废了，只剩下一个解决问题的方向。</p>
 <p>这个用了2个晚上，2个中午做的，选引擎选了很久，cocos2d太重，后来看上了韩国人写的collie，自己用，不错。碰撞、事件和概念类的layer、object。</p>
 <p>这版完成版本，有些细节没做，包括按钮的动画、文字特效、loading美化，分数算法也有些小问题，可能跟setInterval、事件并发延迟有关。</p>
-<p><a target="_blank" rel="noopener" href="http://onrd.net/game"><em><strong>Demo地址</strong></em></a></p>
+<p><a target="_blank" rel="noopener" href="http://onrd.net/game"><strong><em>Demo地址</em></strong></a></p>
 
       
     </div>
@@ -547,7 +527,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##周末小记<br>学车这事儿拖了很久，今天再次早起，6:00赶去体检，还好，到那后前面两个人排队，8点开门体检，一个教练，一个验本的，开扯。像所有市井一样，吹牛逼到7：50体检。过程==过场，排队1小时，视力、色盲、照相15分钟，完事儿。</p>
+          <p>##周末小记 学车这事儿拖了很久，今天再次早起，6:00赶去体检，还好，到那后前面两个人排队，8点开门体检，一个教练，一个验本的，开扯。像所有市井一样，吹牛逼到7：50体检。过程==过场，排队1小时，视力、色盲、照相15分钟，完事儿。</p>
 <p>开心的去看鱼、看鸟、看石头、看蝈蝈，换了一个大浴缸，一批新鱼，业余玩玩，填补家里的生机。</p>
 <p>下午，找了一个教练，先自学。估计半年内的时间还要分给学车这件事儿一部分，业余时间也越发的值钱了。</p>
 <p>从二次勤奋后，感觉到时间的宝贵，游戏不玩了，午觉很多时候也应付身体来一颗，一直在问：谁TMD说时间像海绵里的水挤挤就有？！这货肯定没专心干事业啊</p>
@@ -627,16 +607,15 @@
           <blockquote>
 <p>做个机器人？写一首歌？So cool，why no？</p>
 </blockquote>
-<h2 id="小小点点"><a href="#小小点点" class="headerlink" title="小小点点"></a>小小点点</h2><pre><code>Section 1 - 外形
-</code></pre>
+<h2 id="小小点点">小小点点</h2>
+<pre><code>Section 1 - 外形</code></pre>
 <p>我的宝贝儿叫点点</p>
 <p>高高的个子，像个小模特</p>
 <p>圆圆的脸蛋，那么的可爱</p>
 <p>小小的眼睛，像一洼清水</p>
 <p>小大的嘴巴，笑得特别甜</p>
 <p>胖胖的手脚，轻轻的，抚摸着妈妈的脸</p>
-<pre><code>Section 2 表情 表现
-</code></pre>
+<pre><code>Section 2 表情 表现</code></pre>
 <p>我的宝贝儿是一然</p>
 <p>她机灵古怪，小小的少年</p>
 <p>她睡觉气人</p>
@@ -651,8 +630,7 @@
 <p>好孩子，啦啦啦啦</p>
 <p>好宝贝，啦啦啦啦</p>
 <p>爸爸妈妈爱你，一直爱你</p>
-<pre><code>    chorus
-</code></pre>
+<pre><code>    chorus</code></pre>
 <p>。。。。</p>
 
       
@@ -727,21 +705,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>####学习</p>
-<ul>
-<li>部署jekyll环境。jekyll - win7下安装流程：ruby【2.15成功，版本小于2或者2.2不行】，devkit，gem install jekyll。搞定！期间最麻烦的是ruby版本引起的问题、gem源国外被墙【添加taobao源解决】</li>
-<li>C++学习容器类。vector、set、deque、list、map</li>
-</ul>
-<hr>
-<p>####工作</p>
-<ul>
-<li>无特别有趣的地方，重复代码。</li>
-</ul>
-<hr>
-<p>####其他</p>
-<ul>
-<li>晚饭期间看我是歌手，第一次看到李健，感觉好像看过，想起水木年华的感觉，想起一生有你。百度，果然，确实是那个清华的。有趣的是，在一群唱歌的戏子中间，偶尔有这家伙穿插几个冷笑话，“这是数学中的冒泡”。理工男，职业病。</li>
-</ul>
+          <p>####学习 * 部署jekyll环境。jekyll - win7下安装流程：ruby【2.15成功，版本小于2或者2.2不行】，devkit，gem install jekyll。搞定！期间最麻烦的是ruby版本引起的问题、gem源国外被墙【添加taobao源解决】 * C++学习容器类。vector、set、deque、list、map</p>
+<hr />
+<p>####工作 * 无特别有趣的地方，重复代码。</p>
+<hr />
+<p>####其他 * 晚饭期间看我是歌手，第一次看到李健，感觉好像看过，想起水木年华的感觉，想起一生有你。百度，果然，确实是那个清华的。有趣的是，在一群唱歌的戏子中间，偶尔有这家伙穿插几个冷笑话，“这是数学中的冒泡”。理工男，职业病。</p>
 
       
     </div>
@@ -815,29 +783,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>####为什么</p>
-<ul>
-<li>省心，省力。</li>
-</ul>
-<p>####做什么</p>
-<ul>
-<li><p>技术学习笔记</p>
-</li>
-<li><p>代码开源分享</p>
-</li>
-<li><p>装X读书笔记</p>
-</li>
-<li><p>数据结构算法</p>
-</li>
-<li><p>网络安全学习</p>
-</li>
-<li><p>熏肉音乐美术书法</p>
-</li>
-<li><p>得比价值观人生观</p>
-<pre><code>  小记：从欢乐的童年到无忧无虑的大学毕业，告别校园已经10年，经历了不少人事，有得有失。作为IT中的老年人，从没有止步。就像这个用了多年的域名，onrd==On road，加上当年戴维寇克斯的 Walk hard，人生观之一，On the road, walk hard. 形译：行路难，难于上青天；神译：在路上，永不止步！
-</code></pre>
-</li>
-</ul>
+          <p>####为什么 * 省心，省力。</p>
+<p>####做什么 * 技术学习笔记 * 代码开源分享 * 装X读书笔记 * 数据结构算法 * 网络安全学习 * 熏肉音乐美术书法 * 得比价值观人生观</p>
+<pre><code>    小记：从欢乐的童年到无忧无虑的大学毕业，告别校园已经10年，经历了不少人事，有得有失。作为IT中的老年人，从没有止步。就像这个用了多年的域名，onrd==On road，加上当年戴维寇克斯的 Walk hard，人生观之一，On the road, walk hard. 形译：行路难，难于上青天；神译：在路上，永不止步！</code></pre>
 
       
     </div>
