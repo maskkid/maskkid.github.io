@@ -146,6 +146,106 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2018/07/11/2018-07-11-work_problems/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Simo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="足迹">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/11/2018-07-11-work_problems/" class="post-title-link" itemprop="url">前段时间总结的一些开发问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-07-11 16:49:00" itemprop="dateCreated datePublished" datetime="2018-07-11T16:49:00+08:00">2018-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index"><span itemprop="name">work</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这是前段时间在一套不认可的前端方案下，后端几十号人完全没有规范的情况下，总结了一个问题和建议的文档。</p>
+<h2 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h2><ol>
+<li>框架底层库不稳定,尤其是自建库部分,目前经常需要变动,导致页面来回改动. 建议: 封一层,内部完全只用antd.</li>
+<li>目前写一个页面创建需要做以下几件事:<ul>
+<li>添加路由配置(改写loadfile和index两个文件) 2</li>
+<li>分析页面数据结构,创建数据结构体(前端叫法 interface) 1</li>
+<li>分析页面,隔离编写组件/容器/页面三部分 2-3</li>
+<li>编写redux以及数据服务部分,涉及以下几个目录和文件的创建:<ul>
+<li>actions/模块名/页面文件 1</li>
+<li>reducers/模块名/页面文件,创建完成后,改写同目录下index文件配置,然后再改写reducers目录下的index文件 3</li>
+<li>api 1</li>
+<li>mock编写(mock具体文件编写/db.js/routes.js) 3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>以上过程,纯手工编写,非常繁琐,建议:尽量把路由/api/mock部分提前配置,自动生成(依赖后端同事,尽快出全部的接口定义)</p>
+<h2 id="接口部分"><a href="#接口部分" class="headerlink" title="接口部分"></a>接口部分</h2><ol>
+<li>文档不统一,生成的文档每个模块接口都不一样</li>
+<li>没有接口规范,可以参考币别管理接口</li>
+<li>接口容错和提醒很暴力,最起码应该区分一下业务错误是数据格式问题,还是数据项类型问题</li>
+<li>接口交付前,一定要测试,并且有测试通过的原始数据格式和测试结果记录</li>
+</ol>
+<p>接口要么没有定义;有定义的,没字段注释;有字段注释的,调不通;调通了,又要改</p>
+<p>对接例子eq.<br>    企业信息接口 查询/添加 一周<br>    摊销 一周<br>    财税设置 一周<br>    币别管理 四个接口 一下午</p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2018/07/02/2018-07-02-about-the-coding-work/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1019,89 +1119,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2017/02/06/2017-02-06-the_last_year/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Simo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="足迹">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/02/06/2017-02-06-the_last_year/" class="post-title-link" itemprop="url">2016年总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-02-06 16:15:00" itemprop="dateCreated datePublished" datetime="2017-02-06T16:15:00+08:00">2017-02-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">other</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <pre><code>        纯流水账
-</code></pre>
-<h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>工作的问题，这一年半年换了一家公司TF。</p>
-<p>TF所在的团队，氛围上很喜欢，技术收获谈不上，毕竟有官僚背景的作风，更多的是非常纯粹的用结果体现价值。我做前后端甚至服务器小架构，其中，后端部分做的并不好。在TF的那半年时间里，把之前上一家公司8年的加班时间都补上了。好多时间是997，9-12-6，做的还算开心，但是陪家人时间太少，身体也吃不消了，正好赶上有哥们再三邀我，终于在8月底离职。</p>
-<p>新的公司是SK，很工作环境很互联网的一家分公司。工作主要是前端，部分后端和疑难杂症也做。工作强度还好，介于前两家公司之间。晚上会义务加班1~2小时，周末不加。</p>
-<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>家人身体都好，棉袄越来越懂事儿。比较大的事情，淘了一个小房子，手续各种波折，目前八字暂无一撇。</p>
-<h2 id="遗憾"><a href="#遗憾" class="headerlink" title="遗憾"></a>遗憾</h2><p>工作上，没有在TF走的更久，做的更好。</p>
-<p>被贷款这个东西栓的太紧了，估计好计划会延迟3~5年。</p>
-<h2 id="新计划"><a href="#新计划" class="headerlink" title="新计划"></a>新计划</h2><p>技术学习上，golang非常喜欢，也做了一个比较完整的项目。webserver+tcp/udpserver。</p>
-<p>生活上，摇号估计没戏，一定要来个外地牌照的小车了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1171,7 +1188,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

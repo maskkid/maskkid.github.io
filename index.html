@@ -146,7 +146,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2021/09/01/2021-09-01-shuxue-1/">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2021/09/02/2021-09-01-shuxue-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -160,7 +160,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/09/01/2021-09-01-shuxue-1/" class="post-title-link" itemprop="url">线性代数基础</a>
+            <a href="/2021/09/02/2021-09-01-shuxue-1/" class="post-title-link" itemprop="url">支持向量机SVM</a>
         </h2>
 
         <div class="post-meta">
@@ -171,8 +171,92 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-09-01 21:55:00 / Modified: 22:02:04" itemprop="dateCreated datePublished" datetime="2021-09-01T21:55:00+08:00">2021-09-01</time>
+              <time title="Created: 2021-09-02 12:00:00 / Modified: 11:19:47" itemprop="dateCreated datePublished" datetime="2021-09-02T12:00:00+08:00">2021-09-02</time>
             </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ml/" itemprop="url" rel="index"><span itemprop="name">ml</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>支持向量机，是用于分类的一种算法，主要通过查找最大分类间隔的决策面，实现数据切割。</p>
+<h2 id="数学模型"><a href="#数学模型" class="headerlink" title="数学模型"></a>数学模型</h2><h3 id="超平面方程"><a href="#超平面方程" class="headerlink" title="超平面方程"></a>超平面方程</h3><p>$$<br>y = ax + b\</p>
+<p>\—\</p>
+<p>x_2 = ax_1 + b\</p>
+<p>\—\</p>
+<p>ax_1 - x_2 + b = 0\</p>
+<p>\—\</p>
+<p>\left[<br> \begin{matrix}<br>   a &amp; -1<br>  \end{matrix}<br>  \right]<br>  \left[<br> \begin{matrix}<br>   x_1 \<br>   x_2<br>  \end{matrix}<br>  \right]<br>  +b=0\</p>
+<p>\—\</p>
+<p>\omega^T\vec{x}+b=0\<br>注: （二维） \omega=[\omega_1,\omega_2]^T，x=[x_1,x_2]^T\<br>（多维）\omega=[\omega_1,\omega_2,…,\omega_n]^T，x=[x_1,x_2,…,x_n]^T\<br>$$</p>
+<h3 id="分类间隔方程"><a href="#分类间隔方程" class="headerlink" title="分类间隔方程"></a>分类间隔方程</h3><p>$$<br>点到直线的距离：<br>d=\left|<br>\frac{Ax_0+By_0+C}{\sqrt{A^2+B^2}}<br>\right|<br>\<br>拓展到多维：<br>d=\frac{|\omega^Tx+\gamma|}{||\omega||}<br>\注：d就是【分类间隔】。其中||\omega||表示w的二范数<br>$$</p>
+<h3 id="约束条件"><a href="#约束条件" class="headerlink" title="约束条件"></a>约束条件</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2021/09/01/2021-09-01-svm-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Simo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="足迹">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/01/2021-09-01-svm-1/" class="post-title-link" itemprop="url">线性代数基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-01 21:55:00" itemprop="dateCreated datePublished" datetime="2021-09-01T21:55:00+08:00">2021-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-02 10:39:38" itemprop="dateModified" datetime="2021-09-02T10:39:38+08:00">2021-09-02</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -881,106 +965,6 @@ hotfix
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2018/07/11/2018-07-11-work_problems/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Simo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="足迹">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/07/11/2018-07-11-work_problems/" class="post-title-link" itemprop="url">前段时间总结的一些开发问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-07-11 16:49:00" itemprop="dateCreated datePublished" datetime="2018-07-11T16:49:00+08:00">2018-07-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/work/" itemprop="url" rel="index"><span itemprop="name">work</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这是前段时间在一套不认可的前端方案下，后端几十号人完全没有规范的情况下，总结了一个问题和建议的文档。</p>
-<h2 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h2><ol>
-<li>框架底层库不稳定,尤其是自建库部分,目前经常需要变动,导致页面来回改动. 建议: 封一层,内部完全只用antd.</li>
-<li>目前写一个页面创建需要做以下几件事:<ul>
-<li>添加路由配置(改写loadfile和index两个文件) 2</li>
-<li>分析页面数据结构,创建数据结构体(前端叫法 interface) 1</li>
-<li>分析页面,隔离编写组件/容器/页面三部分 2-3</li>
-<li>编写redux以及数据服务部分,涉及以下几个目录和文件的创建:<ul>
-<li>actions/模块名/页面文件 1</li>
-<li>reducers/模块名/页面文件,创建完成后,改写同目录下index文件配置,然后再改写reducers目录下的index文件 3</li>
-<li>api 1</li>
-<li>mock编写(mock具体文件编写/db.js/routes.js) 3</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<p>以上过程,纯手工编写,非常繁琐,建议:尽量把路由/api/mock部分提前配置,自动生成(依赖后端同事,尽快出全部的接口定义)</p>
-<h2 id="接口部分"><a href="#接口部分" class="headerlink" title="接口部分"></a>接口部分</h2><ol>
-<li>文档不统一,生成的文档每个模块接口都不一样</li>
-<li>没有接口规范,可以参考币别管理接口</li>
-<li>接口容错和提醒很暴力,最起码应该区分一下业务错误是数据格式问题,还是数据项类型问题</li>
-<li>接口交付前,一定要测试,并且有测试通过的原始数据格式和测试结果记录</li>
-</ol>
-<p>接口要么没有定义;有定义的,没字段注释;有字段注释的,调不通;调通了,又要改</p>
-<p>对接例子eq.<br>    企业信息接口 查询/添加 一周<br>    摊销 一周<br>    财税设置 一周<br>    币别管理 四个接口 一下午</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1050,7 +1034,7 @@ hotfix
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
