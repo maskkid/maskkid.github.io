@@ -146,6 +146,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2017/03/15/2017-03-15-docker-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Simo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="足迹">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/15/2017-03-15-docker-demo/" class="post-title-link" itemprop="url">docker 使用记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-03-15 11:15:00" itemprop="dateCreated datePublished" datetime="2017-03-15T11:15:00+08:00">2017-03-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="docker-个人基本理解">Docker 个人基本理解</h2>
+<ul>
+<li>镜像 静态的资源文件，用于容器中动态加载</li>
+<li>容器 动态的文件，用于承载镜像。类似操作系统之于应用软件</li>
+<li>pull commit 之类，将镜像通过类似git的方式管理起来，方便分发和版本管理</li>
+<li>能做什么？一致化的模块功能，方便的组合，跨平台部署</li>
+</ul>
+<h2 id="docker-commands">Docker commands</h2>
+<ul>
+<li><p>systemctl start docker</p></li>
+<li><p>docker pull // 获取镜像， 可以先通过git search 查找</p></li>
+<li><p>docker images // 获取所有镜像</p></li>
+<li><p>docker run -v hostpath:vmpath -v hostpath2:vmpath2 --privileged -p 80:8080 --name renameTest centos:latest -it /sbin/init</p></li>
+<li><p>-v和volume配置有不同。主要是文件夹的共享范围。宿主和容器、容器和容器之间是否可以同步修改。<a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000004107293">参考此文</a></p></li>
+<li><p>-it</p></li>
+<li><p>--privileged 部分命令需要宿主root权限</p></li>
+<li><p>-p 和宿主端口映射</p></li>
+<li><p>--name 起个小名</p></li>
+<li><p>docker commit // 可以将容器打包成镜像</p></li>
+<li><p>docker ps -a // 所有容器</p></li>
+<li><p>dockerfile配置详解，<a target="_blank" rel="noopener" href="http://www.cnblogs.com/jackluo/p/5388189.html">参考该网址</a></p></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2017/02/15/2017-02-15-one-tech-plan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1083,110 +1178,6 @@ simoR = {
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://im.onrd.net/2015/08/12/2015-08-12-php_frame_design_init/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Simo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="足迹">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2015/08/12/2015-08-12-php_frame_design_init/" class="post-title-link" itemprop="url">php框架设计稿</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2015-08-12 21:57:00" itemprop="dateCreated datePublished" datetime="2015-08-12T21:57:00+08:00">2015-08-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-13 09:40:59" itemprop="dateModified" datetime="2021-08-13T09:40:59+08:00">2021-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>很简单的框架，适合自己用：）</p>
-<pre>
-XFrame
-    core
-        db.class.php
-        storage.class.php
-        memcache.class.php
-    
-    helper
-        gd.class.php
-        form.class.php
-        upload.class.php
-        http.class.php
-
-    common
-        config.frame.php
-        config.app.php
-
-    xframe
-        Model.class.php
-        Controller.class.php 
-        View.class.php
-        XFrame.class.php run, loader ($controller->action()) 
-
-    XFrame.php autoload, loadconfig, define, global, XFrame.class::run()
-
-
-index.php
-    define('APP_PATH', './simoapp')  
-    require XFrame/XFrame.php
-</pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1256,7 +1247,7 @@ index.php
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1296,10 +1287,8 @@ index.php
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Simo</span>
+  <span class="author" itemprop="copyrightHolder">simo</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
 
         
 
